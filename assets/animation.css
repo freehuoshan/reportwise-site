@@ -1,0 +1,240 @@
+/* Three-step hero animation.
+ *
+ * Stage A (0–33%): camera frame + shutter flash, image lands.
+ * Stage B (33–66%): redaction rectangles fade in over the image.
+ * Stage C (66–100%): chat bubble appears, AI markdown lines reveal top-down.
+ *
+ * Pure CSS keyframes. SVGs inline in the HTML. Respects reduced-motion. */
+
+.anim-stage {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+}
+
+.anim-card {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #f0f7fc 0%, #e1ecf5 100%);
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* phone frame */
+.anim-phone {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 58%;
+  aspect-ratio: 9 / 17;
+  transform: translate(-50%, -50%);
+  background: #0f1e2e;
+  border-radius: 26px;
+  padding: 8px;
+  box-shadow: 0 12px 30px rgba(15, 30, 46, 0.18);
+}
+.anim-screen {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---- Stage A: camera + shutter ---- */
+
+.anim-camera-frame {
+  position: absolute;
+  inset: 18%;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  opacity: 0;
+  animation: a-camera 12s infinite;
+}
+.anim-camera-frame::before,
+.anim-camera-frame::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+}
+.anim-camera-frame::before {
+  top: -2px; left: -2px;
+  border-right: 0; border-bottom: 0;
+}
+.anim-camera-frame::after {
+  bottom: -2px; right: -2px;
+  border-left: 0; border-top: 0;
+}
+.anim-shutter {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  opacity: 0;
+  animation: a-shutter 12s infinite;
+}
+
+/* ---- Report image (shared across stages) ---- */
+
+.anim-report {
+  position: absolute;
+  inset: 8%;
+  background: #fff;
+  border-radius: 6px;
+  padding: 12px;
+  font-family: monospace;
+  font-size: 8px;
+  color: #495b6d;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  animation: a-report 12s infinite;
+}
+.anim-report-line {
+  height: 4px;
+  background: #d6dde4;
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+.anim-report-line.w-90 { width: 90%; }
+.anim-report-line.w-70 { width: 70%; }
+.anim-report-line.w-80 { width: 80%; }
+.anim-report-line.w-55 { width: 55%; }
+.anim-report-line.w-60 { width: 60%; }
+.anim-report-line.w-75 { width: 75%; }
+.anim-report-line.w-40 { width: 40%; }
+.anim-report-line.title { background: #b6c1cd; height: 6px; width: 50%; margin-bottom: 8px; }
+
+/* ---- Stage B: redaction rectangles ---- */
+
+.anim-redact {
+  position: absolute;
+  height: 6px;
+  background: #0f1e2e;
+  border-radius: 1px;
+  opacity: 0;
+  animation: a-redact 12s infinite;
+}
+.anim-redact.r1 { top: 32px; left: 16px; width: 42%; animation-delay: 4.0s; }
+.anim-redact.r2 { top: 50px; left: 16px; width: 30%; animation-delay: 4.3s; }
+.anim-redact.r3 { top: 68px; left: 16px; width: 38%; animation-delay: 4.6s; }
+
+/* ---- Stage C: chat with AI ---- */
+
+.anim-chat {
+  position: absolute;
+  inset: 0;
+  padding: 14px;
+  opacity: 0;
+  animation: a-chat 12s infinite;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #fff;
+}
+.anim-bubble {
+  background: var(--accent-soft);
+  color: var(--ink);
+  padding: 8px 10px;
+  border-radius: 12px 12px 12px 4px;
+  font-size: 10px;
+  max-width: 80%;
+  font-family: inherit;
+}
+.anim-ai-line {
+  height: 5px;
+  background: #cfd8e2;
+  border-radius: 2px;
+  opacity: 0;
+}
+.anim-ai-line.l1 { width: 88%; animation: a-ai-line 12s infinite; animation-delay: 8.8s; }
+.anim-ai-line.l2 { width: 70%; animation: a-ai-line 12s infinite; animation-delay: 9.1s; }
+.anim-ai-line.l3 { width: 82%; animation: a-ai-line 12s infinite; animation-delay: 9.4s; }
+.anim-ai-line.l4 { width: 55%; animation: a-ai-line 12s infinite; animation-delay: 9.7s; }
+.anim-ai-line.highlight { background: var(--accent); width: 40%; animation-delay: 10.0s; }
+
+/* ---- Stage labels (small text under the phone) ---- */
+
+.anim-label {
+  position: absolute;
+  left: 50%;
+  bottom: 4%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  background: rgba(255,255,255,0.85);
+  padding: 4px 12px;
+  border-radius: 12px;
+  white-space: nowrap;
+  opacity: 0;
+}
+.anim-label.l-a { animation: a-label 12s infinite; animation-delay: 0.5s; }
+.anim-label.l-b { animation: a-label 12s infinite; animation-delay: 4.5s; }
+.anim-label.l-c { animation: a-label 12s infinite; animation-delay: 8.5s; }
+
+/* ---- keyframes ---- */
+
+@keyframes a-camera {
+  0%, 3% { opacity: 0; }
+  6%, 22% { opacity: 1; }
+  25%, 100% { opacity: 0; }
+}
+@keyframes a-shutter {
+  0%, 22% { opacity: 0; }
+  23% { opacity: 0.9; }
+  28% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes a-report {
+  0%, 24% { opacity: 0; transform: translateY(20px) scale(0.9); }
+  28% { opacity: 1; transform: translateY(0) scale(1); }
+  64% { opacity: 1; transform: translateY(0) scale(1); }
+  68%, 100% { opacity: 0; transform: translateY(0) scale(0.95); }
+}
+@keyframes a-redact {
+  0%, 100% { opacity: 0; transform: scaleX(0.2); }
+  3% { opacity: 1; transform: scaleX(1); }
+  28% { opacity: 1; transform: scaleX(1); }
+  32% { opacity: 0; }
+}
+@keyframes a-chat {
+  0%, 66% { opacity: 0; }
+  70%, 95% { opacity: 1; }
+  98%, 100% { opacity: 0; }
+}
+@keyframes a-ai-line {
+  0%, 100% { opacity: 0; }
+  3% { opacity: 1; }
+  20% { opacity: 1; }
+  25% { opacity: 0; }
+}
+@keyframes a-label {
+  0%, 100% { opacity: 0; transform: translate(-50%, 6px); }
+  6% { opacity: 1; transform: translate(-50%, 0); }
+  28% { opacity: 1; transform: translate(-50%, 0); }
+  33% { opacity: 0; transform: translate(-50%, -4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-camera-frame,
+  .anim-shutter,
+  .anim-report,
+  .anim-redact,
+  .anim-chat,
+  .anim-ai-line,
+  .anim-label {
+    animation: none !important;
+  }
+  .anim-report { opacity: 1; transform: none; }
+  .anim-chat { opacity: 0; }
+  .anim-label.l-a { opacity: 1; }
+  .anim-redact { opacity: 1; transform: scaleX(1); }
+  .anim-redact.r1, .anim-redact.r2, .anim-redact.r3 { animation-delay: 0s !important; }
+}

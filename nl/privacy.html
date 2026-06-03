@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacybeleid — ReportWise</title>
+<meta name="description" content="Hoe ReportWise met je gegevens omgaat: wat op je toestel blijft, wat naar AI-aanbieders gaat bij analyse en wat je kunt regelen.">
+<link rel="alternate" hreflang="en" href="/en/privacy.html"><link rel="alternate" hreflang="zh" href="/zh/privacy.html"><link rel="alternate" hreflang="zh-Hant" href="/zh-Hant/privacy.html"><link rel="alternate" hreflang="ja" href="/ja/privacy.html"><link rel="alternate" hreflang="de" href="/de/privacy.html"><link rel="alternate" hreflang="es" href="/es/privacy.html"><link rel="alternate" hreflang="fr" href="/fr/privacy.html"><link rel="alternate" hreflang="pt-BR" href="/pt-BR/privacy.html"><link rel="alternate" hreflang="ko" href="/ko/privacy.html"><link rel="alternate" hreflang="it" href="/it/privacy.html"><link rel="alternate" hreflang="nl" href="/nl/privacy.html"><link rel="alternate" hreflang="hi" href="/hi/privacy.html"><link rel="alternate" hreflang="id" href="/id/privacy.html"><link rel="alternate" hreflang="vi" href="/vi/privacy.html"><link rel="alternate" hreflang="x-default" href="/privacy.html">
+<link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container inner">
+    <a class="brand" href="index.html"><img src="/assets/logo.svg" alt="">ReportWise</a>
+    <nav class="nav">
+      <a href="index.html">Start</a>
+      <a href="terms.html">Voorwaarden</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="legal">
+<div class="container">
+
+<h1>Privacybeleid</h1>
+<p class="meta">Laatst bijgewerkt: 03-06-2026</p>
+
+<p class="source-note">Deze vertaling is ter referentie. Bij juridische geschillen is de Engelse versie leidend.</p>
+
+<p>ReportWise (de «app») is een privékluis voor afbeeldingen van medische uitslagen. Dit beleid beschrijft welke gegevens worden verwerkt, waar ze staan, wat over het netwerk gaat bij een AI-analyse en hoe je dat kunt regelen of verwijderen.</p>
+
+<h2>1. Gegevens die op je toestel blijven</h2>
+<ul>
+  <li>De <strong>uitslagafbeeldingen</strong> die je importeert worden geschreven naar de lokale sandbox-opslag. Ze verlaten het toestel niet automatisch.</li>
+  <li><strong>Profielen, datums en labels</strong> staan lokaal in een SQLite-database.</li>
+  <li><strong>Versleutelde exports</strong> (<code>.rwarchive</code>) ontstaan alleen wanneer je op «Exporteren» tikt, op een plek die jij kiest.</li>
+</ul>
+
+<h2>2. Gegevens die het toestel verlaten — alleen op jouw verzoek</h2>
+<p>Bij een tik op <strong>Analyseren</strong>:</p>
+<ul>
+  <li>de afgedekte afbeeldingen in het gekozen bereik (maximaal 20),</li>
+  <li>de data per afbeelding,</li>
+  <li>jouw vrije prompt en</li>
+  <li>de gekozen modelaanduiding</li>
+</ul>
+<p>worden via HTTPS naar de ReportWise-proxy op <code>api.reportwise.codeblog.net</code> verzonden. De proxy stuurt ze direct door naar een externe beeld-AI-aanbieder (configureerbaar; de actieve verschijnt in de modelkiezer in de app) en stuurt het antwoord terug naar je toestel.</p>
+
+<h2>3. Wat de ReportWise-server bewaart</h2>
+<ul>
+  <li><strong>Afbeeldingen en prompts worden niet bewaard</strong> op onze server. Ze worden doorgestuurd en daarna verwijderd.</li>
+  <li>Een <strong>AI-taakregistratie</strong> blijft staan: anonieme account-id, gevraagd model, tijdstempels, status en gefactureerde credits — voor quota, restituties en diagnose. <strong>Geen beeldinhoud.</strong></li>
+  <li>Een <strong>machtigingsregistratie</strong> volgt je resterende credit, proefstatus en (indien aanwezig) de aankoopidentificatie van het platform.</li>
+</ul>
+
+<h2>4. Externe AI-aanbieders</h2>
+<p>De actieve aanbieder ontvangt de afgedekte afbeeldingen, jouw prompt en de modelnaam. Hun verwerking volgt hun eigen privacyvoorwaarden. Wil je niets versturen, voer dan geen analyse uit — elke analyse start jij.</p>
+
+<h2>5. Accounts en identifiers</h2>
+<ul>
+  <li>De app genereert bij eerste start een <strong>anonieme apparaat-id</strong>.</li>
+  <li>Je kunt optioneel een <strong>Google-account</strong> koppelen om je machtiging op een ander toestel te herstellen. De koppeling deelt alleen de Google-account-identifier, geen contacten, mail of andere Google-gegevens.</li>
+  <li>We verzamelen geen naam, adres, telefoonnummer, contacten of locatie.</li>
+</ul>
+
+<h2>6. Aankopen in de app</h2>
+<p>Aankopen lopen via Apple StoreKit of Google Play Billing. Het platform geeft ons de transactie-id om de aankoop te verifiëren en credits bij te schrijven. We zien noch bewaren betaalgegevens.</p>
+
+<h2>7. Jouw rechten</h2>
+<ul>
+  <li><strong>Exporteren</strong>: maak een versleuteld <code>.rwarchive</code> vanuit de app.</li>
+  <li><strong>Lokaal verwijderen</strong>: bij het verwijderen van een uitslag worden de bestanden van het toestel verwijderd.</li>
+  <li><strong>Serverzijde verwijderen</strong>: mail naar <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> vanuit je gekoppelde Google-account, of vermeld je anonieme account-id; we wissen machtiging en AI-taakregistraties.</li>
+  <li>In de EER, het VK of Californië heb je extra rechten op inzage en rectificatie; zelfde adres.</li>
+</ul>
+
+<h2>8. Kinderen</h2>
+<p>ReportWise is niet bedoeld voor kinderen onder de 13. Gezinsprofielen van minderjarigen worden door een ouder/voogd aangemaakt en beheerd.</p>
+
+<h2>9. Beveiliging</h2>
+<p>Alleen HTTPS-transport. Lokale exports worden versleuteld met een door jou gekozen wachtwoordzin. We versturen geen onafgedekte afbeeldingen namens jou: het afdekken gebeurt op het toestel en wordt vóór upload in de afbeelding gebrand.</p>
+
+<h2>10. Geen medisch advies</h2>
+<p>ReportWise is geen medisch hulpmiddel. AI-uitvoer is educatief, kan fouten bevatten en vervangt geen advies van een zorgverlener.</p>
+
+<h2>11. Wijzigingen</h2>
+<p>Bij wijzigingen werken we de datum hierboven bij en tonen we bij ingrijpende wijzigingen een melding in de app bij de volgende start.</p>
+
+<h2>12. Contact</h2>
+<p>Vragen of verzoeken: <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>. Reactie meestal binnen 48 uur.</p>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <h4>ReportWise</h4>
+      <div class="foot-links">
+        <a href="privacy.html">Privacybeleid</a>
+        <a href="terms.html">Gebruiksvoorwaarden</a>
+        <a href="contact.html">Contact en support</a>
+        <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>
+      </div>
+    </div>
+    <div>
+      <h4>Taal</h4>
+      <div class="lang-grid">
+        <a href="/en/privacy.html">English</a>
+        <a href="/zh/privacy.html">简体中文</a>
+        <a href="/zh-Hant/privacy.html">繁體中文</a>
+        <a href="/ja/privacy.html">日本語</a>
+        <a href="/de/privacy.html">Deutsch</a>
+        <a href="/es/privacy.html">Español</a>
+        <a href="/fr/privacy.html">Français</a>
+        <a href="/pt-BR/privacy.html">Português (Brasil)</a>
+        <a href="/ko/privacy.html">한국어</a>
+        <a href="/it/privacy.html">Italiano</a>
+        <a href="/nl/privacy.html" class="current">Nederlands</a>
+        <a href="/hi/privacy.html">हिन्दी</a>
+        <a href="/id/privacy.html">Bahasa Indonesia</a>
+        <a href="/vi/privacy.html">Tiếng Việt</a>
+      </div>
+    </div>
+    <div class="foot-bottom" style="grid-column: 1 / -1;">© 2026 ReportWise. ReportWise is geen medisch hulpmiddel.</div>
+  </div>
+</footer>
+
+</body>
+</html>

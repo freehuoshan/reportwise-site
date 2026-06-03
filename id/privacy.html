@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kebijakan privasi — ReportWise</title>
+<meta name="description" content="Bagaimana ReportWise memperlakukan data Anda: apa yang tetap di perangkat, apa yang dikirim ke penyedia AI saat Anda meminta analisis, dan apa yang dapat Anda kontrol.">
+<link rel="alternate" hreflang="en" href="/en/privacy.html"><link rel="alternate" hreflang="zh" href="/zh/privacy.html"><link rel="alternate" hreflang="zh-Hant" href="/zh-Hant/privacy.html"><link rel="alternate" hreflang="ja" href="/ja/privacy.html"><link rel="alternate" hreflang="de" href="/de/privacy.html"><link rel="alternate" hreflang="es" href="/es/privacy.html"><link rel="alternate" hreflang="fr" href="/fr/privacy.html"><link rel="alternate" hreflang="pt-BR" href="/pt-BR/privacy.html"><link rel="alternate" hreflang="ko" href="/ko/privacy.html"><link rel="alternate" hreflang="it" href="/it/privacy.html"><link rel="alternate" hreflang="nl" href="/nl/privacy.html"><link rel="alternate" hreflang="hi" href="/hi/privacy.html"><link rel="alternate" hreflang="id" href="/id/privacy.html"><link rel="alternate" hreflang="vi" href="/vi/privacy.html"><link rel="alternate" hreflang="x-default" href="/privacy.html">
+<link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container inner">
+    <a class="brand" href="index.html"><img src="/assets/logo.svg" alt="">ReportWise</a>
+    <nav class="nav">
+      <a href="index.html">Beranda</a>
+      <a href="terms.html">Ketentuan</a>
+      <a href="contact.html">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<main class="legal">
+<div class="container">
+
+<h1>Kebijakan privasi</h1>
+<p class="meta">Terakhir diperbarui: 03-06-2026</p>
+
+<p class="source-note">Terjemahan ini bersifat referensi. Untuk interpretasi hukum, versi bahasa Inggris yang berlaku.</p>
+
+<p>ReportWise («aplikasi») adalah brankas pribadi untuk gambar laporan medis. Kebijakan ini menjelaskan data apa yang diproses, di mana lokasinya, apa yang dikirim melalui jaringan saat melakukan analisis dengan AI, dan bagaimana Anda mengelola atau menghapusnya.</p>
+
+<h2>1. Data yang tetap di perangkat Anda</h2>
+<ul>
+  <li><strong>Gambar laporan</strong> yang Anda impor ditulis ke penyimpanan sandbox lokal aplikasi dan tidak meninggalkan perangkat secara otomatis.</li>
+  <li><strong>Profil, tanggal, dan label</strong> yang Anda berikan disimpan di database SQLite lokal.</li>
+  <li><strong>Ekspor terenkripsi</strong> (<code>.rwarchive</code>) hanya dibuat saat Anda menekan «Ekspor» dan disimpan di lokasi yang Anda pilih.</li>
+</ul>
+
+<h2>2. Data yang meninggalkan perangkat — hanya saat Anda meminta</h2>
+<p>Saat Anda menekan <strong>Analisis</strong>:</p>
+<ul>
+  <li>gambar tertutup dalam rentang yang Anda pilih (hingga 20),</li>
+  <li>tanggal masing-masing gambar,</li>
+  <li>prompt bebas yang Anda tulis, dan</li>
+  <li>pengenal model yang Anda pilih</li>
+</ul>
+<p>dikirim via HTTPS ke proxy ReportWise di <code>api.reportwise.codeblog.net</code>. Proxy meneruskan ke penyedia AI visual pihak ketiga (dapat dikonfigurasi; yang aktif tampil di pemilih model aplikasi) dan mengembalikan respons model ke ponsel Anda.</p>
+
+<h2>3. Apa yang disimpan server ReportWise</h2>
+<ul>
+  <li><strong>Gambar dan prompt tidak disimpan</strong> di server kami. Diteruskan ke penyedia, lalu dibuang setelah respons.</li>
+  <li><strong>Catatan tugas AI</strong> disimpan — ID akun anonim, model yang diminta, stempel waktu, status, dan kredit yang ditagih — untuk kuota, pengembalian dana, dan diagnosis. <strong>Tanpa konten gambar.</strong></li>
+  <li><strong>Catatan entitlement</strong> melacak sisa kredit analisis, status percobaan, dan (jika ada) pengenal pembelian platform.</li>
+</ul>
+
+<h2>4. Penyedia AI pihak ketiga</h2>
+<p>Penyedia aktif menerima gambar tertutup, prompt Anda, dan nama model. Penanganan oleh mereka tunduk pada kebijakan privasi mereka sendiri. Jika tidak ingin mengirim apa pun, cukup jangan jalankan analisis — setiap analisis dimulai oleh Anda.</p>
+
+<h2>5. Akun dan pengenal</h2>
+<ul>
+  <li>Aplikasi membuat <strong>ID perangkat anonim</strong> saat pertama dijalankan.</li>
+  <li>Anda dapat opsional menautkan <strong>akun Google</strong> untuk memulihkan entitlement di perangkat baru. Penautan hanya berbagi pengenal akun Google, bukan kontak, email, atau data Google lainnya.</li>
+  <li>Kami tidak mengumpulkan nama, alamat, nomor telepon, kontak, atau lokasi.</li>
+</ul>
+
+<h2>6. Pembelian dalam aplikasi</h2>
+<p>Pembelian melalui Apple StoreKit atau Google Play Billing. Platform memberi tahu server kami pengenal transaksi untuk memverifikasi pembelian dan menambah kredit. Kami tidak melihat atau menyimpan data pembayaran.</p>
+
+<h2>7. Hak Anda</h2>
+<ul>
+  <li><strong>Ekspor</strong>: buat <code>.rwarchive</code> terenkripsi dari aplikasi.</li>
+  <li><strong>Hapus lokal</strong>: menghapus laporan akan menghapus berkasnya dari perangkat.</li>
+  <li><strong>Hapus catatan sisi server</strong>: kirim email ke <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> dari akun Google yang ditautkan, atau sertakan ID akun anonim; kami akan menghapus entitlement dan catatan tugas AI.</li>
+  <li>Jika Anda di EEA, UK, atau California, Anda memiliki hak akses dan koreksi tambahan; alamat yang sama.</li>
+</ul>
+
+<h2>8. Anak-anak</h2>
+<p>ReportWise tidak ditujukan untuk anak di bawah 13 tahun. Profil keluarga untuk anak di bawah umur harus dibuat dan dikelola oleh orang tua/wali.</p>
+
+<h2>9. Keamanan</h2>
+<p>Transportasi hanya HTTPS. Ekspor lokal dienkripsi dengan frasa sandi pilihan Anda. Kami tidak meneruskan gambar tidak tertutup atas nama Anda — penutupan dilakukan dan dipateri pada gambar di perangkat sebelum unggah.</p>
+
+<h2>10. Bukan saran medis</h2>
+<p>ReportWise bukan alat medis. Keluaran AI bersifat edukatif, dapat keliru, dan bukan pengganti nasihat tenaga medis.</p>
+
+<h2>11. Perubahan</h2>
+<p>Jika kebijakan diubah, tanggal di atas diperbarui dan untuk perubahan material akan ada notifikasi di aplikasi saat berikutnya dibuka.</p>
+
+<h2>12. Kontak</h2>
+<p>Pertanyaan atau permintaan: <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>. Biasanya kami balas dalam 48 jam.</p>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <h4>ReportWise</h4>
+      <div class="foot-links">
+        <a href="privacy.html">Kebijakan privasi</a>
+        <a href="terms.html">Ketentuan layanan</a>
+        <a href="contact.html">Kontak &amp; dukungan</a>
+        <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>
+      </div>
+    </div>
+    <div>
+      <h4>Bahasa</h4>
+      <div class="lang-grid">
+        <a href="/en/privacy.html">English</a>
+        <a href="/zh/privacy.html">简体中文</a>
+        <a href="/zh-Hant/privacy.html">繁體中文</a>
+        <a href="/ja/privacy.html">日本語</a>
+        <a href="/de/privacy.html">Deutsch</a>
+        <a href="/es/privacy.html">Español</a>
+        <a href="/fr/privacy.html">Français</a>
+        <a href="/pt-BR/privacy.html">Português (Brasil)</a>
+        <a href="/ko/privacy.html">한국어</a>
+        <a href="/it/privacy.html">Italiano</a>
+        <a href="/nl/privacy.html">Nederlands</a>
+        <a href="/hi/privacy.html">हिन्दी</a>
+        <a href="/id/privacy.html" class="current">Bahasa Indonesia</a>
+        <a href="/vi/privacy.html">Tiếng Việt</a>
+      </div>
+    </div>
+    <div class="foot-bottom" style="grid-column: 1 / -1;">© 2026 ReportWise. ReportWise bukan alat medis.</div>
+  </div>
+</footer>
+
+</body>
+</html>

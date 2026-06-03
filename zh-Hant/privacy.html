@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隱私政策 — ReportWise</title>
+<meta name="description" content="ReportWise 如何處理你的資料:哪些留在裝置上、呼叫 AI 時哪些會上傳、你可如何控制與刪除。">
+<link rel="alternate" hreflang="en" href="/en/privacy.html">
+<link rel="alternate" hreflang="zh" href="/zh/privacy.html">
+<link rel="alternate" hreflang="zh-Hant" href="/zh-Hant/privacy.html">
+<link rel="alternate" hreflang="ja" href="/ja/privacy.html">
+<link rel="alternate" hreflang="de" href="/de/privacy.html">
+<link rel="alternate" hreflang="es" href="/es/privacy.html">
+<link rel="alternate" hreflang="fr" href="/fr/privacy.html">
+<link rel="alternate" hreflang="pt-BR" href="/pt-BR/privacy.html">
+<link rel="alternate" hreflang="ko" href="/ko/privacy.html">
+<link rel="alternate" hreflang="it" href="/it/privacy.html">
+<link rel="alternate" hreflang="nl" href="/nl/privacy.html">
+<link rel="alternate" hreflang="hi" href="/hi/privacy.html">
+<link rel="alternate" hreflang="id" href="/id/privacy.html">
+<link rel="alternate" hreflang="vi" href="/vi/privacy.html">
+<link rel="alternate" hreflang="x-default" href="/privacy.html">
+<link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container inner">
+    <a class="brand" href="index.html">
+      <img src="/assets/logo.svg" alt="">
+      ReportWise
+    </a>
+    <nav class="nav">
+      <a href="index.html">首頁</a>
+      <a href="terms.html">條款</a>
+      <a href="contact.html">聯絡</a>
+    </nav>
+  </div>
+</header>
+
+<main class="legal">
+<div class="container">
+
+<h1>隱私政策</h1>
+<p class="meta">最近更新:2026-06-03</p>
+
+<p>ReportWise(以下簡稱「本 App」)是一個私密的檢查報告管理工具。本政策說明本 App 處理哪些資料、它們存放在哪裡、發起 AI 分析時哪些資料會跨網路傳輸,以及你如何控制與刪除這些資料。</p>
+
+<h2>1. 留在你裝置上的資料</h2>
+<ul>
+  <li><strong>報告圖片</strong>由你匯入後寫入本 App 的本機沙箱儲存,不會自動離開裝置。</li>
+  <li><strong>檔案、日期、標籤</strong>等你為報告設定的中繼資料,保存在本機 SQLite 資料庫中。</li>
+  <li><strong>加密匯出檔</strong>(<code>.rwarchive</code>)只有在你主動點選「匯出」時才會產生,並儲存到你選擇的位置。</li>
+</ul>
+
+<h2>2. 僅在你主動發起時才會離開裝置的資料</h2>
+<p>當你在 App 內點選 <strong>分析</strong> 時:</p>
+<ul>
+  <li>你選定時間段內的遮擋後圖片(最多 20 張),</li>
+  <li>每張圖片對應的日期,</li>
+  <li>你自行輸入的提示詞,</li>
+  <li>你選定的模型識別符號</li>
+</ul>
+<p>會經由 HTTPS 上傳到 ReportWise 的代理伺服器 <code>api.reportwise.codeblog.net</code>。代理立即將這些資料轉發給第三方視覺 AI 提供方(可在 App 的模型選擇中檢視當前生效的提供方),並將模型回應送回你的手機。</p>
+
+<h2>3. ReportWise 伺服器保留哪些資料</h2>
+<ul>
+  <li><strong>圖片與提示詞不會在我們伺服器上長期保存。</strong>它們被轉發給 AI 提供方,回應傳回後即丟棄。</li>
+  <li>會保留一條 <strong>AI 任務記錄</strong>——匿名帳號 ID、請求的模型、時間戳記、狀態、扣除的 credit,用於配額管理、失敗退款、故障排查。<strong>不含圖片內容。</strong></li>
+  <li>會保留一條 <strong>權益記錄</strong>,追蹤你剩餘的分析 credit、試用狀態,以及(若有)平台內購的訂單識別符號。</li>
+</ul>
+
+<h2>4. 第三方 AI 提供方</h2>
+<p>生效的提供方會收到你遮擋後的圖片、提示詞與模型名稱。這些資料的後續處理遵循其自身的隱私政策。若你不願傳送任何資料,不發起分析即可——每次分析都由你主動觸發。</p>
+
+<h2>5. 帳號與識別符號</h2>
+<ul>
+  <li>本 App 在首次啟動時產生一個<strong>匿名裝置 ID</strong>。</li>
+  <li>你可選擇綁定一個 <strong>Google 帳號</strong>,用於在新裝置上還原權益。綁定時,Google 帳號的識別符號會同步給我們的伺服器,但不會同步通訊錄、郵件等其他 Google 資料。</li>
+  <li>我們不收集姓名、地址、電話號碼、通訊錄、定位等資訊。</li>
+</ul>
+
+<h2>6. 內購</h2>
+<p>購買由 Apple StoreKit 或 Google Play Billing 處理。平台會告訴我們的伺服器交易識別符號,以驗證購買並為帳號儲值。我們不會看到也不會保存銀行卡資訊。</p>
+
+<h2>7. 你的權利</h2>
+<ul>
+  <li><strong>匯出</strong>:在 App 內產生加密的 <code>.rwarchive</code> 檔。</li>
+  <li><strong>本機刪除</strong>:刪除報告時,對應檔案即從裝置上移除。</li>
+  <li><strong>刪除伺服器側記錄</strong>:從已綁定的 Google 帳號寄信至 <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>,或在信中附上匿名帳號 ID,我們會清除權益與 AI 任務記錄。</li>
+  <li>若你位於歐盟、英國或加州,享有存取與修正個人資料的額外權利,透過同一信箱即可聯絡。</li>
+</ul>
+
+<h2>8. 未成年人</h2>
+<p>本 App 不面向 13 歲以下兒童。家庭檔案中涉及未成年的部分,應由其父母或監護人建立與管理。</p>
+
+<h2>9. 安全</h2>
+<p>傳輸全程使用 HTTPS。本機匯出由你選擇通行碼加密。我們不會代你傳送未遮擋的圖片——遮擋在裝置上完成並燒進圖片後才會上傳。</p>
+
+<h2>10. 不構成醫療建議</h2>
+<p>ReportWise 不是醫療器材,AI 的輸出僅供學習參考,可能存在錯誤,不能取代執業醫師的意見。</p>
+
+<h2>11. 政策變更</h2>
+<p>若本政策發生變更,我們會更新上方的「最近更新」日期。如為實質性變更,會在你下次開啟 App 時於應用內提示。</p>
+
+<h2>12. 聯絡</h2>
+<p>隱私問題或資料請求請聯絡:<a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>。一般於 48 小時內回覆。</p>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <h4>ReportWise</h4>
+      <div class="foot-links">
+        <a href="privacy.html">隱私政策</a>
+        <a href="terms.html">服務條款</a>
+        <a href="contact.html">聯絡與支援</a>
+        <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>
+      </div>
+    </div>
+    <div>
+      <h4>語言</h4>
+      <div class="lang-grid">
+        <a href="/en/privacy.html">English</a>
+        <a href="/zh/privacy.html">简体中文</a>
+        <a href="/zh-Hant/privacy.html" class="current">繁體中文</a>
+        <a href="/ja/privacy.html">日本語</a>
+        <a href="/de/privacy.html">Deutsch</a>
+        <a href="/es/privacy.html">Español</a>
+        <a href="/fr/privacy.html">Français</a>
+        <a href="/pt-BR/privacy.html">Português (Brasil)</a>
+        <a href="/ko/privacy.html">한국어</a>
+        <a href="/it/privacy.html">Italiano</a>
+        <a href="/nl/privacy.html">Nederlands</a>
+        <a href="/hi/privacy.html">हिन्दी</a>
+        <a href="/id/privacy.html">Bahasa Indonesia</a>
+        <a href="/vi/privacy.html">Tiếng Việt</a>
+      </div>
+    </div>
+    <div class="foot-bottom" style="grid-column: 1 / -1;">
+      © 2026 ReportWise. ReportWise 不是醫療器材。
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

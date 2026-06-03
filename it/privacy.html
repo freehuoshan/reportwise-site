@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informativa sulla privacy — ReportWise</title>
+<meta name="description" content="Come ReportWise tratta i tuoi dati: cosa resta sul dispositivo, cosa viene inviato ai fornitori di IA quando chiedi un'analisi e cosa puoi controllare.">
+<link rel="alternate" hreflang="en" href="/en/privacy.html"><link rel="alternate" hreflang="zh" href="/zh/privacy.html"><link rel="alternate" hreflang="zh-Hant" href="/zh-Hant/privacy.html"><link rel="alternate" hreflang="ja" href="/ja/privacy.html"><link rel="alternate" hreflang="de" href="/de/privacy.html"><link rel="alternate" hreflang="es" href="/es/privacy.html"><link rel="alternate" hreflang="fr" href="/fr/privacy.html"><link rel="alternate" hreflang="pt-BR" href="/pt-BR/privacy.html"><link rel="alternate" hreflang="ko" href="/ko/privacy.html"><link rel="alternate" hreflang="it" href="/it/privacy.html"><link rel="alternate" hreflang="nl" href="/nl/privacy.html"><link rel="alternate" hreflang="hi" href="/hi/privacy.html"><link rel="alternate" hreflang="id" href="/id/privacy.html"><link rel="alternate" hreflang="vi" href="/vi/privacy.html"><link rel="alternate" hreflang="x-default" href="/privacy.html">
+<link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container inner">
+    <a class="brand" href="index.html"><img src="/assets/logo.svg" alt="">ReportWise</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="terms.html">Termini</a>
+      <a href="contact.html">Contatti</a>
+    </nav>
+  </div>
+</header>
+
+<main class="legal">
+<div class="container">
+
+<h1>Informativa sulla privacy</h1>
+<p class="meta">Ultimo aggiornamento: 03/06/2026</p>
+
+<p class="source-note">Questa traduzione è di riferimento. In caso di divergenza legale prevale la versione inglese.</p>
+
+<p>ReportWise (l'«app») è una cassaforte privata per immagini di referti medici. Questa informativa descrive quali dati vengono trattati, dove risiedono, cosa transita in rete durante un'analisi con IA e come puoi controllarli o cancellarli.</p>
+
+<h2>1. Dati che restano sul dispositivo</h2>
+<ul>
+  <li>Le <strong>immagini dei referti</strong> importate vengono scritte nello storage locale sandbox. Non lasciano il dispositivo in automatico.</li>
+  <li>I <strong>profili, le date e le etichette</strong> attribuiti restano in locale in un database SQLite.</li>
+  <li>Le <strong>esportazioni cifrate</strong> (<code>.rwarchive</code>) si generano solo quando tocchi «Esporta», nel luogo che scegli.</li>
+</ul>
+
+<h2>2. Dati che lasciano il dispositivo — solo se lo chiedi</h2>
+<p>Quando tocchi <strong>Analizza</strong>:</p>
+<ul>
+  <li>le immagini oscurate dell'intervallo selezionato (fino a 20),</li>
+  <li>le date di ciascuna immagine,</li>
+  <li>il tuo prompt libero e</li>
+  <li>l'identificatore del modello scelto</li>
+</ul>
+<p>vengono inviate via HTTPS al proxy ReportWise su <code>api.reportwise.codeblog.net</code>. Il proxy le inoltra al fornitore di IA visiva di terze parti (configurabile; quello attivo appare nel selettore modelli dell'app) e restituisce la risposta al tuo telefono.</p>
+
+<h2>3. Cosa conserva il server di ReportWise</h2>
+<ul>
+  <li><strong>Immagini e prompt non vengono conservati</strong> sul nostro server. Sono inoltrati e poi scartati.</li>
+  <li>Resta un <strong>record di attività IA</strong>: id account anonimo, modello richiesto, timestamp, stato e crediti addebitati, per quota, rimborsi e diagnosi. <strong>Senza contenuto immagine.</strong></li>
+  <li>Un <strong>record di autorizzazione</strong> traccia i crediti residui, lo stato della prova e (se presente) l'identificatore di acquisto della piattaforma.</li>
+</ul>
+
+<h2>4. Fornitori di IA terzi</h2>
+<p>Il fornitore attivo riceve le immagini oscurate, il tuo prompt e il nome del modello. Il suo trattamento dei dati segue la sua informativa. Per non inviare nulla, non avviare un'analisi: ogni analisi parte da te.</p>
+
+<h2>5. Account e identificatori</h2>
+<ul>
+  <li>L'app genera un <strong>id dispositivo anonimo</strong> al primo avvio.</li>
+  <li>Puoi facoltativamente collegare un <strong>account Google</strong> per ripristinare l'autorizzazione su un altro dispositivo. Il collegamento condivide solo l'identificatore dell'account, non contatti, posta o altri dati Google.</li>
+  <li>Non raccogliamo nome, indirizzo, telefono, contatti o posizione.</li>
+</ul>
+
+<h2>6. Acquisti in-app</h2>
+<p>Gli acquisti passano da Apple StoreKit o Google Play Billing. La piattaforma comunica al server l'identificatore della transazione per verificare l'acquisto e accreditare i crediti. Non vediamo né archiviamo dati di pagamento.</p>
+
+<h2>7. I tuoi diritti</h2>
+<ul>
+  <li><strong>Esportare</strong>: genera un <code>.rwarchive</code> cifrato dall'app.</li>
+  <li><strong>Cancellare in locale</strong>: eliminando un referto vengono rimossi i suoi file dal dispositivo.</li>
+  <li><strong>Cancellare i record lato server</strong>: scrivi a <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> dal tuo account Google collegato o includi l'id account anonimo; cancelleremo autorizzazione e attività di IA.</li>
+  <li>Nel SEE, nel Regno Unito o in California hai ulteriori diritti di accesso e rettifica; stesso indirizzo.</li>
+</ul>
+
+<h2>8. Minori</h2>
+<p>ReportWise non è rivolta a minori di 13 anni. I profili familiari di minori sono creati e gestiti da un genitore o tutore.</p>
+
+<h2>9. Sicurezza</h2>
+<p>Trasporto solo HTTPS. Le esportazioni locali sono cifrate con una passphrase a tua scelta. Non trasmettiamo immagini non oscurate per tuo conto: l'oscuramento avviene sul dispositivo e viene impresso nell'immagine prima del caricamento.</p>
+
+<h2>10. Non è un parere medico</h2>
+<p>ReportWise non è un dispositivo medico. L'output dell'IA è informativo, può sbagliare e non sostituisce il parere di un professionista sanitario.</p>
+
+<h2>11. Modifiche</h2>
+<p>In caso di modifiche aggiorniamo la data in alto e, per cambi sostanziali, mostriamo un avviso all'avvio successivo.</p>
+
+<h2>12. Contatti</h2>
+<p>Domande o richieste: <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>. Risposta entro 48 ore.</p>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <h4>ReportWise</h4>
+      <div class="foot-links">
+        <a href="privacy.html">Informativa privacy</a>
+        <a href="terms.html">Termini di servizio</a>
+        <a href="contact.html">Contatti e supporto</a>
+        <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>
+      </div>
+    </div>
+    <div>
+      <h4>Lingua</h4>
+      <div class="lang-grid">
+        <a href="/en/privacy.html">English</a>
+        <a href="/zh/privacy.html">简体中文</a>
+        <a href="/zh-Hant/privacy.html">繁體中文</a>
+        <a href="/ja/privacy.html">日本語</a>
+        <a href="/de/privacy.html">Deutsch</a>
+        <a href="/es/privacy.html">Español</a>
+        <a href="/fr/privacy.html">Français</a>
+        <a href="/pt-BR/privacy.html">Português (Brasil)</a>
+        <a href="/ko/privacy.html">한국어</a>
+        <a href="/it/privacy.html" class="current">Italiano</a>
+        <a href="/nl/privacy.html">Nederlands</a>
+        <a href="/hi/privacy.html">हिन्दी</a>
+        <a href="/id/privacy.html">Bahasa Indonesia</a>
+        <a href="/vi/privacy.html">Tiếng Việt</a>
+      </div>
+    </div>
+    <div class="foot-bottom" style="grid-column: 1 / -1;">© 2026 ReportWise. ReportWise non è un dispositivo medico.</div>
+  </div>
+</footer>
+
+</body>
+</html>

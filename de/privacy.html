@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutzerklärung — ReportWise</title>
+<meta name="description" content="Wie ReportWise mit deinen Daten umgeht: was auf dem Gerät bleibt, was bei einer KI-Analyse übertragen wird und was du steuern kannst.">
+<link rel="alternate" hreflang="en" href="/en/privacy.html">
+<link rel="alternate" hreflang="zh" href="/zh/privacy.html">
+<link rel="alternate" hreflang="zh-Hant" href="/zh-Hant/privacy.html">
+<link rel="alternate" hreflang="ja" href="/ja/privacy.html">
+<link rel="alternate" hreflang="de" href="/de/privacy.html">
+<link rel="alternate" hreflang="es" href="/es/privacy.html">
+<link rel="alternate" hreflang="fr" href="/fr/privacy.html">
+<link rel="alternate" hreflang="pt-BR" href="/pt-BR/privacy.html">
+<link rel="alternate" hreflang="ko" href="/ko/privacy.html">
+<link rel="alternate" hreflang="it" href="/it/privacy.html">
+<link rel="alternate" hreflang="nl" href="/nl/privacy.html">
+<link rel="alternate" hreflang="hi" href="/hi/privacy.html">
+<link rel="alternate" hreflang="id" href="/id/privacy.html">
+<link rel="alternate" hreflang="vi" href="/vi/privacy.html">
+<link rel="alternate" hreflang="x-default" href="/privacy.html">
+<link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container inner">
+    <a class="brand" href="index.html"><img src="/assets/logo.svg" alt="">ReportWise</a>
+    <nav class="nav">
+      <a href="index.html">Start</a>
+      <a href="terms.html">Bedingungen</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main class="legal">
+<div class="container">
+
+<h1>Datenschutzerklärung</h1>
+<p class="meta">Zuletzt aktualisiert: 03.06.2026</p>
+
+<p class="source-note">Diese Übersetzung dient als Referenz. Bei rechtlichen Fragen ist die englische Fassung maßgeblich.</p>
+
+<p>ReportWise (die „App") ist ein privater Tresor für Bilder medizinischer Befunde. Diese Erklärung beschreibt, welche Daten die App verarbeitet, wo sie liegen, was bei einer KI-Analyse übers Netz geht und wie du das steuern oder löschen kannst.</p>
+
+<h2>1. Daten, die auf deinem Gerät bleiben</h2>
+<ul>
+  <li><strong>Befundbilder</strong>, die du importierst, werden in den lokalen Sandbox-Speicher der App geschrieben. Sie verlassen das Gerät nicht automatisch.</li>
+  <li><strong>Profile, Daten und Beschriftungen</strong>, die du Befunden gibst, werden lokal in einer SQLite-Datenbank gespeichert.</li>
+  <li><strong>Verschlüsselte Exporte</strong> (<code>.rwarchive</code>-Dateien) entstehen nur, wenn du auf „Exportieren" tippst, und liegen dort, wo du sie ablegst.</li>
+</ul>
+
+<h2>2. Daten, die nur auf deine Anweisung übertragen werden</h2>
+<p>Wenn du in der App auf <strong>Analysieren</strong> tippst:</p>
+<ul>
+  <li>die geschwärzten Bilder im gewählten Zeitraum (höchstens 20),</li>
+  <li>die jeweiligen Aufnahmedaten,</li>
+  <li>dein frei formulierter Prompt und</li>
+  <li>die gewählte Modellkennung</li>
+</ul>
+<p>werden per HTTPS an den ReportWise-Proxy unter <code>api.reportwise.codeblog.net</code> gesendet. Der Proxy leitet sie an einen Drittanbieter für Bild-KI weiter (konfigurierbar; der aktuell aktive Anbieter ist in der App-Modellauswahl sichtbar) und gibt die Antwort des Modells an dein Gerät zurück.</p>
+
+<h2>3. Was unser Server behält</h2>
+<ul>
+  <li><strong>Bilder und Prompts werden nicht dauerhaft gespeichert.</strong> Sie werden weitergeleitet und nach der Antwort verworfen.</li>
+  <li>Es wird ein <strong>KI-Aufgaben-Eintrag</strong> gespeichert – anonyme Konto-ID, angefragtes Modell, Zeitstempel, Status, abgerechnete Credits – für Kontingent, Erstattungen und Diagnose. <strong>Keine Bildinhalte.</strong></li>
+  <li>Ein <strong>Berechtigungs-Eintrag</strong> hält dein verbleibendes Analyseguthaben, den Trial-Status und (falls vorhanden) die Plattform-Kaufkennung.</li>
+</ul>
+
+<h2>4. Drittanbieter für KI</h2>
+<p>Der aktive Anbieter erhält die geschwärzten Bilder, deinen Prompt und den Modellnamen. Sein Umgang damit unterliegt seiner eigenen Datenschutzerklärung. Wer nichts senden will, startet einfach keine Analyse – jede Analyse beginnt mit deinem Tipp.</p>
+
+<h2>5. Konten und Kennungen</h2>
+<ul>
+  <li>Die App erzeugt beim ersten Start eine <strong>anonyme Geräte-ID</strong>.</li>
+  <li>Du kannst optional ein <strong>Google-Konto</strong> verknüpfen, um deine Berechtigung auf einem neuen Gerät wiederherzustellen. Beim Verknüpfen teilen wir nur die Google-Konto-Kennung – keine Kontakte, Mails oder anderen Google-Daten.</li>
+  <li>Wir erfassen weder Namen, Adressen, Telefonnummern, Kontakte noch Standort.</li>
+</ul>
+
+<h2>6. In-App-Käufe</h2>
+<p>Käufe laufen über Apple StoreKit oder Google Play Billing. Die Plattform teilt unserem Server die Transaktions-ID mit, damit wir den Kauf prüfen und Credits gutschreiben. Zahlungsdaten sehen oder speichern wir nicht.</p>
+
+<h2>7. Deine Rechte</h2>
+<ul>
+  <li><strong>Export</strong>: ein verschlüsseltes <code>.rwarchive</code> direkt aus der App.</li>
+  <li><strong>Lokal löschen</strong>: ein gelöschter Befund entfernt auch seine Dateien vom Gerät.</li>
+  <li><strong>Serverseitig löschen</strong>: schreibe von deinem verknüpften Google-Konto an <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> oder gib deine anonyme Konto-ID an; wir entfernen Berechtigung und KI-Aufgaben-Einträge.</li>
+  <li>Im EWR, in Großbritannien oder Kalifornien hast du zusätzliche Auskunfts- und Berichtigungsrechte. Erreichbar über dieselbe Adresse.</li>
+</ul>
+
+<h2>8. Kinder</h2>
+<p>ReportWise richtet sich nicht an Kinder unter 13. Familienprofile für Minderjährige sollen von einer erziehungsberechtigten Person angelegt und verwaltet werden.</p>
+
+<h2>9. Sicherheit</h2>
+<p>Übertragung nur per HTTPS. Lokale Exporte verschlüsselst du mit einer selbst gewählten Passphrase. Wir senden keine ungeschwärzten Bilder für dich – die Schwärzung wird vor dem Upload auf dem Gerät ins Bild gebrannt.</p>
+
+<h2>10. Keine medizinische Beratung</h2>
+<p>ReportWise ist kein Medizinprodukt. Die KI-Ausgabe dient nur der Information, kann Fehler enthalten und ersetzt keinen ärztlichen Rat.</p>
+
+<h2>11. Änderungen</h2>
+<p>Bei Änderungen aktualisieren wir das Datum oben. Wesentliche Änderungen weisen wir beim nächsten Start in der App aus.</p>
+
+<h2>12. Kontakt</h2>
+<p>Datenschutzfragen oder -anträge: <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>. Antwort meist innerhalb von 48 Stunden.</p>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <h4>ReportWise</h4>
+      <div class="foot-links">
+        <a href="privacy.html">Datenschutzerklärung</a>
+        <a href="terms.html">Nutzungsbedingungen</a>
+        <a href="contact.html">Kontakt &amp; Support</a>
+        <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>
+      </div>
+    </div>
+    <div>
+      <h4>Sprache</h4>
+      <div class="lang-grid">
+        <a href="/en/privacy.html">English</a>
+        <a href="/zh/privacy.html">简体中文</a>
+        <a href="/zh-Hant/privacy.html">繁體中文</a>
+        <a href="/ja/privacy.html">日本語</a>
+        <a href="/de/privacy.html" class="current">Deutsch</a>
+        <a href="/es/privacy.html">Español</a>
+        <a href="/fr/privacy.html">Français</a>
+        <a href="/pt-BR/privacy.html">Português (Brasil)</a>
+        <a href="/ko/privacy.html">한국어</a>
+        <a href="/it/privacy.html">Italiano</a>
+        <a href="/nl/privacy.html">Nederlands</a>
+        <a href="/hi/privacy.html">हिन्दी</a>
+        <a href="/id/privacy.html">Bahasa Indonesia</a>
+        <a href="/vi/privacy.html">Tiếng Việt</a>
+      </div>
+    </div>
+    <div class="foot-bottom" style="grid-column: 1 / -1;">© 2026 ReportWise. ReportWise ist kein Medizinprodukt.</div>
+  </div>
+</footer>
+
+</body>
+</html>
