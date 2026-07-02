@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — ReportWise</title>
-<meta name="description" content="How ReportWise handles your data: what stays on your device, what travels to AI providers when you ask for analysis, and what you can control.">
+<meta name="description" content="How ReportWise handles your data: what stays on your device, what is shared with OpenAI when you ask for analysis, and what you can control.">
 <link rel="alternate" hreflang="en" href="/en/privacy.html">
 <link rel="alternate" hreflang="zh" href="/zh/privacy.html">
 <link rel="alternate" hreflang="zh-Hant" href="/zh-Hant/privacy.html">
@@ -43,9 +43,9 @@
 <div class="container">
 
 <h1>Privacy Policy</h1>
-<p class="meta">Last updated: 2026-06-03</p>
+<p class="meta">Last updated: 2026-07-02</p>
 
-<p>ReportWise (the "app") is a private vault for medical-report images. This policy explains what data the app handles, where it lives, what crosses the network when you ask the AI to analyse reports, and how to control or delete it.</p>
+<p>ReportWise (the "app") is a private vault for medical-report images. This policy explains what data the app handles, where it lives, what is shared with OpenAI when you ask the AI to analyze reports, and how to control or delete it.</p>
 
 <h2>1. Data that stays on your device</h2>
 <ul>
@@ -55,24 +55,25 @@
 </ul>
 
 <h2>2. Data that leaves your device — only when you ask</h2>
-<p>When you tap <strong>Analyze</strong> in the app:</p>
+<p>Before the app sends report data to OpenAI for the first time, it asks for your explicit permission. If you decline, no report image or prompt is uploaded and no analysis credit is charged. When you give permission and tap <strong>Analyze</strong> in the app, the following data is uploaded over HTTPS to the ReportWise proxy at <code>api.reportwise.codeblog.net</code>:</p>
 <ul>
-  <li>The redacted images in the date range you selected (up to 20),</li>
-  <li>the per-image dates,</li>
-  <li>the free-text prompt you wrote, and</li>
-  <li>the model identifier you picked</li>
+  <li>the report images in the date range you selected, after any redactions you applied (up to 20 images),</li>
+  <li>the per-image report dates,</li>
+  <li>the free-text prompt or question you wrote, and</li>
+  <li>the model identifier you picked.</li>
 </ul>
-<p>are uploaded over HTTPS to the ReportWise proxy at <code>api.reportwise.codeblog.net</code>. The proxy immediately forwards them to a third-party vision AI provider (configurable; the currently-active provider is shown in the in-app model picker) and returns the model's response to your phone.</p>
+<p>The ReportWise proxy forwards that data to <strong>OpenAI</strong> to generate the explanation you requested, then returns OpenAI's response to your phone.</p>
 
 <h2>3. What the ReportWise server keeps</h2>
 <ul>
-  <li><strong>Images and prompts are not persisted</strong> on our server. They are passed through to the AI provider and discarded after the response is returned.</li>
-  <li>An <strong>AI task record</strong> is stored — anonymous account id, requested model, timestamps, status, and credits charged — so we can enforce quota, refund failed calls, and diagnose outages. No image content.</li>
-  <li>An <strong>entitlement record</strong> tracks your remaining analysis credit, trial status, and (if you've made one) the platform purchase identifier.</li>
+  <li><strong>Images and prompts are not persisted</strong> on our server. They are passed through to OpenAI and discarded after the response is returned.</li>
+  <li><strong>AI results</strong> may be stored temporarily in encrypted form so your device can retrieve the response. They expire automatically and are not kept long-term.</li>
+  <li>An <strong>AI task record</strong> is stored: anonymous account id, requested model, timestamps, status, and credits charged or refunded. We use this to enforce quota, refund failed calls, and diagnose outages. It does not contain image content or your prompt.</li>
+  <li>An <strong>entitlement record</strong> tracks your remaining analysis credits, free-credit state, platform purchase identifier if you made a purchase, and OpenAI data-sharing consent status.</li>
 </ul>
 
-<h2>4. Third-party AI providers</h2>
-<p>The active provider receives the redacted images, your prompt, and the model name. Their handling of that data is governed by their own privacy terms. You can choose not to send anything by simply not running an analysis — every analysis is initiated by you.</p>
+<h2>4. OpenAI</h2>
+<p>ReportWise currently uses OpenAI as the third-party AI provider. OpenAI receives the selected report images after any redactions you applied, report dates, your prompt, and the model name only after your explicit in-app permission and only when you run an analysis. OpenAI's handling of that data is governed by OpenAI's own privacy terms. You can choose not to share data with OpenAI by declining permission or by not running an analysis.</p>
 
 <h2>5. Accounts and identifiers</h2>
 <ul>
@@ -82,13 +83,14 @@
 </ul>
 
 <h2>6. In-app purchases</h2>
-<p>Purchases go through Apple StoreKit or Google Play Billing. The platform tells our server the transaction identifier so we can verify the purchase and credit your account. We do not see or store payment card details.</p>
+<p>On iOS, analysis credit packs are sold only through Apple In-App Purchase using StoreKit. On Android, purchases go through Google Play Billing. The platform tells our server the transaction identifier and product information so we can verify the purchase and credit your account. We do not see or store payment card details.</p>
 
 <h2>7. Your rights</h2>
 <ul>
   <li><strong>Export</strong>: produce an encrypted <code>.rwarchive</code> from inside the app.</li>
   <li><strong>Delete locally</strong>: delete a report and its files are removed from the device.</li>
-  <li><strong>Delete server-side records</strong>: email <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> from a Google-bound account, or include your anonymous account id, and we will remove your entitlement and AI task records.</li>
+  <li><strong>Delete your account in the app</strong>: go to <strong>Me → Privacy &amp; Account → Delete Account</strong>. This deletes the server-side anonymous account, device identity, linked account identifiers, entitlement and credit records, purchase-grant records, AI task records, and consent records tied to that account. It also clears local ReportWise data from that device.</li>
+  <li><strong>Ask for help</strong>: if you cannot use the in-app deletion flow, email <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> from a Google-bound account or include your anonymous account id.</li>
   <li>If you are in the EEA, UK, or California, you have additional rights to access and rectify the personal data we hold; the same email reaches us.</li>
 </ul>
 
@@ -99,7 +101,7 @@
 <p>Transport is HTTPS only. Local exports are encrypted with a passphrase you choose. We do not transmit unredacted images on your behalf; redaction is performed and burned into the image on the device before upload.</p>
 
 <h2>10. Not medical advice</h2>
-<p>ReportWise is not a medical device. AI output is educational, may be wrong, and is not a substitute for advice from a licensed clinician.</p>
+<p>ReportWise is not a medical device. AI output is educational, may be wrong, and is not a substitute for advice from a licensed clinician. The app shows source or citation sections with AI explanations where available so you can review the basis for the information.</p>
 
 <h2>11. Changes</h2>
 <p>If we change this policy, we will update the "Last updated" date above and, for material changes, surface a notice in the app the next time you open it.</p>

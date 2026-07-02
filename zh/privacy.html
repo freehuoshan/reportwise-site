@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>隐私政策 — ReportWise</title>
-<meta name="description" content="ReportWise 如何处理你的数据:哪些数据留在设备上、调用 AI 时哪些会上传、你可以如何控制和删除。">
+<meta name="description" content="ReportWise 如何处理你的数据:哪些留在设备上、请求分析时哪些会分享给 OpenAI、你可以如何控制和删除。">
 <link rel="alternate" hreflang="en" href="/en/privacy.html">
 <link rel="alternate" hreflang="zh" href="/zh/privacy.html">
 <link rel="alternate" hreflang="zh-Hant" href="/zh-Hant/privacy.html">
@@ -43,9 +43,11 @@
 <div class="container">
 
 <h1>隐私政策</h1>
-<p class="meta">最近更新:2026-06-03</p>
+<p class="meta">最近更新:2026-07-02</p>
 
-<p>ReportWise(以下简称"本 App")是一个私密的检查报告管理工具。本政策说明本 App 处理哪些数据、它们存放在哪里、当你发起 AI 分析时哪些数据会跨网络传输,以及你如何控制和删除这些数据。</p>
+<p class="source-note">本翻译仅供参考。法律解释以英文版本为准。</p>
+
+<p>ReportWise(以下简称"本 App")是一个私密的检查报告管理工具。本政策说明本 App 处理哪些数据、它们存放在哪里、当你请求 AI 分析时哪些数据会分享给 OpenAI,以及你如何控制和删除这些数据。</p>
 
 <h2>1. 留在你设备上的数据</h2>
 <ul>
@@ -55,24 +57,25 @@
 </ul>
 
 <h2>2. 仅在你主动发起时才会离开设备的数据</h2>
-<p>当你在 App 内点击 <strong>分析</strong> 时:</p>
+<p>在本 App 首次向 OpenAI 发送报告数据之前,会先请求你的明确同意。如果你拒绝,不会上传报告图片或提示词,也不会扣除分析额度。当你同意并在 App 内点击 <strong>分析</strong> 时,以下数据会通过 HTTPS 上传到 ReportWise 的代理服务器 <code>api.reportwise.codeblog.net</code>:</p>
 <ul>
-  <li>你选定时间段内的遮挡后图片(最多 20 张),</li>
-  <li>每张图片对应的日期,</li>
-  <li>你自己输入的提示词,</li>
-  <li>你选定的模型标识</li>
+  <li>你选定时间段内的报告图片,包含你已进行的遮挡处理(最多 20 张),</li>
+  <li>每张图片对应的报告日期,</li>
+  <li>你自己输入的提示词或问题,</li>
+  <li>你选定的模型标识。</li>
 </ul>
-<p>会通过 HTTPS 上传到 ReportWise 的代理服务器 <code>api.reportwise.codeblog.net</code>。代理立即把这些数据转发给第三方视觉 AI 提供方(可在 App 的模型选择中查看当前生效的提供方),并把模型的回复返回到你的手机。</p>
+<p>ReportWise 代理会将这些数据转发给 <strong>OpenAI</strong>,用于生成你请求的解释,然后把 OpenAI 的回复返回到你的手机。</p>
 
 <h2>3. ReportWise 服务器保留哪些数据</h2>
 <ul>
-  <li><strong>图片和提示词不会在我们服务器上长期保存。</strong>它们被转发给 AI 提供方,响应返回后即丢弃。</li>
-  <li>会保留一条 <strong>AI 任务记录</strong>——匿名账号 ID、请求的模型、时间戳、状态、扣除的 credit,用于配额管理、失败退款、故障排查。<strong>不含图片内容</strong>。</li>
-  <li>会保留一条 <strong>权益记录</strong>,跟踪你剩余的分析 credit、试用状态,以及(若有)平台内购的订单标识。</li>
+  <li><strong>图片和提示词不会在我们服务器上长期保存。</strong>它们会被转发给 OpenAI,响应返回后即丢弃。</li>
+  <li><strong>AI 结果</strong>可能会以加密形式短暂保存,以便你的设备取回回复。它们会自动过期,不会长期保存。</li>
+  <li>会保留一条 <strong>AI 任务记录</strong>:匿名账号 ID、请求的模型、时间戳、状态、扣除或退回的 credit,用于配额管理、失败退款、故障排查。它不包含图片内容或你的提示词。</li>
+  <li>会保留一条 <strong>权益记录</strong>,跟踪你剩余的分析 credit、免费额度状态、平台内购订单标识(若有),以及 OpenAI 数据共享同意状态。</li>
 </ul>
 
-<h2>4. 第三方 AI 提供方</h2>
-<p>生效的提供方会收到你遮挡后的图片、提示词与模型名称。这些数据在其手中的处理遵循其自有的隐私政策。如果你不愿意发送任何数据,不发起分析即可——每次分析都由你主动触发。</p>
+<h2>4. OpenAI</h2>
+<p>ReportWise 目前使用 OpenAI 作为第三方 AI 提供方。OpenAI 只会在你在 App 内明确同意且发起分析时,收到你选定的报告图片(包含你已进行的遮挡处理)、报告日期、你的提示词以及模型名称。OpenAI 对这些数据的处理遵循 OpenAI 自身的隐私条款。如果你不愿意与 OpenAI 分享数据,可以拒绝同意或不发起分析。</p>
 
 <h2>5. 账号与标识</h2>
 <ul>
@@ -82,13 +85,14 @@
 </ul>
 
 <h2>6. 内购</h2>
-<p>购买经由 Apple StoreKit 或 Google Play Billing 完成。平台会告诉我们的服务器交易标识,以便验证购买并给账号充值。我们不会看到也不会保存银行卡信息。</p>
+<p>在 iOS 上,分析额度包仅通过 Apple In-App Purchase 和 StoreKit 销售。在 Android 上,购买通过 Google Play Billing 完成。平台会告诉我们的服务器交易标识和商品信息,以便验证购买并给账号充值。我们不会看到也不会保存银行卡信息。</p>
 
 <h2>7. 你的权利</h2>
 <ul>
   <li><strong>导出</strong>:在 App 内生成加密的 <code>.rwarchive</code> 文件。</li>
   <li><strong>本地删除</strong>:删除报告时,对应文件即从设备上移除。</li>
-  <li><strong>删除服务器侧记录</strong>:从已绑定的 Google 账号发邮件到 <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>,或在邮件中附上匿名账号 ID,我们会清除权益和 AI 任务记录。</li>
+  <li><strong>在 App 内删除账号</strong>:进入 <strong>Me → Privacy &amp; Account → Delete Account</strong>。这会删除与该账号绑定的服务器侧匿名账号、设备身份、已绑定账号标识、权益和 credit 记录、购买发放记录、AI 任务记录以及同意记录,并清除该设备上的本地 ReportWise 数据。</li>
+  <li><strong>请求协助</strong>:如果你无法使用 App 内删除流程,可以从已绑定的 Google 账号发邮件到 <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>,或在邮件中附上匿名账号 ID。</li>
   <li>如果你位于欧盟、英国或加州,享有访问与更正个人数据的额外权利,通过同一邮箱即可联系。</li>
 </ul>
 
@@ -99,7 +103,7 @@
 <p>传输全程使用 HTTPS。本地导出由你选择口令加密。我们不会替你传输未遮挡的图片——遮挡操作在设备上完成并直接烧进图片之后才会上传。</p>
 
 <h2>10. 不构成医疗建议</h2>
-<p>ReportWise 不是医疗器械,AI 的输出仅供学习参考,可能存在错误,不能替代持牌医生的意见。</p>
+<p>ReportWise 不是医疗器械,AI 的输出仅供学习参考,可能存在错误,不能替代持牌医生的意见。在可用时,本 App 会随 AI 解释显示来源或引用区块,帮助你核对相关信息的依据。</p>
 
 <h2>11. 政策变更</h2>
 <p>如果本政策发生变更,我们会更新上方的"最近更新"日期。如果是实质性变更,会在你下次打开 App 时在应用内提示。</p>

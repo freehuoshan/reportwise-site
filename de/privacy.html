@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Datenschutzerklärung — ReportWise</title>
-<meta name="description" content="Wie ReportWise mit deinen Daten umgeht: was auf dem Gerät bleibt, was bei einer KI-Analyse übertragen wird und was du steuern kannst.">
+<meta name="description" content="Wie ReportWise mit deinen Daten umgeht: was auf dem Gerät bleibt, was bei einer Analyse an OpenAI gesendet wird und was du steuern kannst.">
 <link rel="alternate" hreflang="en" href="/en/privacy.html">
 <link rel="alternate" hreflang="zh" href="/zh/privacy.html">
 <link rel="alternate" hreflang="zh-Hant" href="/zh-Hant/privacy.html">
@@ -40,11 +40,11 @@
 <div class="container">
 
 <h1>Datenschutzerklärung</h1>
-<p class="meta">Zuletzt aktualisiert: 03.06.2026</p>
+<p class="meta">Zuletzt aktualisiert: 02.07.2026</p>
 
 <p class="source-note">Diese Übersetzung dient als Referenz. Bei rechtlichen Fragen ist die englische Fassung maßgeblich.</p>
 
-<p>ReportWise (die „App") ist ein privater Tresor für Bilder medizinischer Befunde. Diese Erklärung beschreibt, welche Daten die App verarbeitet, wo sie liegen, was bei einer KI-Analyse übers Netz geht und wie du das steuern oder löschen kannst.</p>
+<p>ReportWise (die „App") ist ein privater Tresor für Bilder medizinischer Befunde. Diese Erklärung beschreibt, welche Daten die App verarbeitet, wo sie liegen, was bei einer KI-Analyse an OpenAI gesendet wird und wie du das steuern oder löschen kannst.</p>
 
 <h2>1. Daten, die auf deinem Gerät bleiben</h2>
 <ul>
@@ -54,24 +54,25 @@
 </ul>
 
 <h2>2. Daten, die nur auf deine Anweisung übertragen werden</h2>
-<p>Wenn du in der App auf <strong>Analysieren</strong> tippst:</p>
+<p>Bevor die App erstmals Befunddaten an OpenAI sendet, fragt sie nach deiner ausdrücklichen Zustimmung. Wenn du ablehnst, werden keine Befundbilder oder Prompts hochgeladen und es wird kein Analyseguthaben berechnet. Wenn du zustimmst und in der App auf <strong>Analysieren</strong> tippst, werden folgende Daten per HTTPS an den ReportWise-Proxy unter <code>api.reportwise.codeblog.net</code> gesendet:</p>
 <ul>
-  <li>die geschwärzten Bilder im gewählten Zeitraum (höchstens 20),</li>
-  <li>die jeweiligen Aufnahmedaten,</li>
-  <li>dein frei formulierter Prompt und</li>
-  <li>die gewählte Modellkennung</li>
+  <li>die Befundbilder im gewählten Zeitraum, einschließlich deiner angewendeten Schwärzungen (höchstens 20 Bilder),</li>
+  <li>die jeweiligen Befunddaten,</li>
+  <li>dein frei formulierter Prompt oder deine Frage und</li>
+  <li>die gewählte Modellkennung.</li>
 </ul>
-<p>werden per HTTPS an den ReportWise-Proxy unter <code>api.reportwise.codeblog.net</code> gesendet. Der Proxy leitet sie an einen Drittanbieter für Bild-KI weiter (konfigurierbar; der aktuell aktive Anbieter ist in der App-Modellauswahl sichtbar) und gibt die Antwort des Modells an dein Gerät zurück.</p>
+<p>Der ReportWise-Proxy leitet diese Daten an <strong>OpenAI</strong> weiter, um die von dir angeforderte Erklärung zu erzeugen, und gibt die Antwort von OpenAI an dein Gerät zurück.</p>
 
 <h2>3. Was unser Server behält</h2>
 <ul>
-  <li><strong>Bilder und Prompts werden nicht dauerhaft gespeichert.</strong> Sie werden weitergeleitet und nach der Antwort verworfen.</li>
-  <li>Es wird ein <strong>KI-Aufgaben-Eintrag</strong> gespeichert – anonyme Konto-ID, angefragtes Modell, Zeitstempel, Status, abgerechnete Credits – für Kontingent, Erstattungen und Diagnose. <strong>Keine Bildinhalte.</strong></li>
-  <li>Ein <strong>Berechtigungs-Eintrag</strong> hält dein verbleibendes Analyseguthaben, den Trial-Status und (falls vorhanden) die Plattform-Kaufkennung.</li>
+  <li><strong>Bilder und Prompts werden nicht dauerhaft gespeichert.</strong> Sie werden an OpenAI weitergeleitet und nach der Antwort verworfen.</li>
+  <li><strong>KI-Ergebnisse</strong> können kurzzeitig verschlüsselt gespeichert werden, damit dein Gerät die Antwort abrufen kann. Sie laufen automatisch ab und werden nicht langfristig gespeichert.</li>
+  <li>Es wird ein <strong>KI-Aufgaben-Eintrag</strong> gespeichert: anonyme Konto-ID, angefragtes Modell, Zeitstempel, Status sowie berechnete oder erstattete Credits. Das dient Kontingent, Erstattungen und Diagnose. Er enthält keine Bildinhalte und keinen Prompt.</li>
+  <li>Ein <strong>Berechtigungs-Eintrag</strong> hält dein verbleibendes Analyseguthaben, den Status kostenloser Credits, die Plattform-Kaufkennung falls vorhanden und den OpenAI-Datenfreigabe-Status.</li>
 </ul>
 
-<h2>4. Drittanbieter für KI</h2>
-<p>Der aktive Anbieter erhält die geschwärzten Bilder, deinen Prompt und den Modellnamen. Sein Umgang damit unterliegt seiner eigenen Datenschutzerklärung. Wer nichts senden will, startet einfach keine Analyse – jede Analyse beginnt mit deinem Tipp.</p>
+<h2>4. OpenAI</h2>
+<p>ReportWise nutzt derzeit OpenAI als Drittanbieter für KI. OpenAI erhält die ausgewählten Befundbilder einschließlich deiner angewendeten Schwärzungen, Befunddaten, deinen Prompt und den Modellnamen nur nach deiner ausdrücklichen Zustimmung in der App und nur wenn du eine Analyse startest. Der Umgang von OpenAI mit diesen Daten unterliegt den eigenen Datenschutzbedingungen von OpenAI. Wenn du keine Daten mit OpenAI teilen möchtest, lehne die Zustimmung ab oder starte keine Analyse.</p>
 
 <h2>5. Konten und Kennungen</h2>
 <ul>
@@ -81,13 +82,14 @@
 </ul>
 
 <h2>6. In-App-Käufe</h2>
-<p>Käufe laufen über Apple StoreKit oder Google Play Billing. Die Plattform teilt unserem Server die Transaktions-ID mit, damit wir den Kauf prüfen und Credits gutschreiben. Zahlungsdaten sehen oder speichern wir nicht.</p>
+<p>Unter iOS werden Analyse-Credit-Pakete nur über Apple In-App Purchase mit StoreKit verkauft. Unter Android laufen Käufe über Google Play Billing. Die Plattform teilt unserem Server die Transaktions-ID und Produktinformationen mit, damit wir den Kauf prüfen und dein Konto gutschreiben können. Zahlungsdaten sehen oder speichern wir nicht.</p>
 
 <h2>7. Deine Rechte</h2>
 <ul>
   <li><strong>Export</strong>: ein verschlüsseltes <code>.rwarchive</code> direkt aus der App.</li>
   <li><strong>Lokal löschen</strong>: ein gelöschter Befund entfernt auch seine Dateien vom Gerät.</li>
-  <li><strong>Serverseitig löschen</strong>: schreibe von deinem verknüpften Google-Konto an <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> oder gib deine anonyme Konto-ID an; wir entfernen Berechtigung und KI-Aufgaben-Einträge.</li>
+  <li><strong>Konto in der App löschen</strong>: gehe zu <strong>Me → Privacy &amp; Account → Delete Account</strong>. Dadurch werden das serverseitige anonyme Konto, die Geräteidentität, verknüpfte Kontokennungen, Berechtigungs- und Credit-Einträge, Kaufgutschriften, KI-Aufgaben-Einträge und Zustimmungseinträge für dieses Konto gelöscht. Außerdem werden lokale ReportWise-Daten von diesem Gerät entfernt.</li>
+  <li><strong>Hilfe anfordern</strong>: Wenn du den Löschablauf in der App nicht nutzen kannst, schreibe von deinem verknüpften Google-Konto an <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> oder gib deine anonyme Konto-ID an.</li>
   <li>Im EWR, in Großbritannien oder Kalifornien hast du zusätzliche Auskunfts- und Berichtigungsrechte. Erreichbar über dieselbe Adresse.</li>
 </ul>
 
@@ -98,7 +100,7 @@
 <p>Übertragung nur per HTTPS. Lokale Exporte verschlüsselst du mit einer selbst gewählten Passphrase. Wir senden keine ungeschwärzten Bilder für dich – die Schwärzung wird vor dem Upload auf dem Gerät ins Bild gebrannt.</p>
 
 <h2>10. Keine medizinische Beratung</h2>
-<p>ReportWise ist kein Medizinprodukt. Die KI-Ausgabe dient nur der Information, kann Fehler enthalten und ersetzt keinen ärztlichen Rat.</p>
+<p>ReportWise ist kein Medizinprodukt. Die KI-Ausgabe dient nur der Information, kann Fehler enthalten und ersetzt keinen ärztlichen Rat. Die App zeigt, soweit verfügbar, Quellen- oder Zitierabschnitte zu KI-Erklärungen, damit du die Grundlage der Informationen prüfen kannst.</p>
 
 <h2>11. Änderungen</h2>
 <p>Bei Änderungen aktualisieren wir das Datum oben. Wesentliche Änderungen weisen wir beim nächsten Start in der App aus.</p>

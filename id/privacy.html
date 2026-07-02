@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kebijakan privasi — ReportWise</title>
-<meta name="description" content="Bagaimana ReportWise memperlakukan data Anda: apa yang tetap di perangkat, apa yang dikirim ke penyedia AI saat Anda meminta analisis, dan apa yang dapat Anda kontrol.">
+<meta name="description" content="Bagaimana ReportWise memperlakukan data Anda: apa yang tetap di perangkat, apa yang dibagikan dengan OpenAI saat Anda meminta analisis, dan apa yang dapat Anda kontrol.">
 <link rel="alternate" hreflang="en" href="/en/privacy.html"><link rel="alternate" hreflang="zh" href="/zh/privacy.html"><link rel="alternate" hreflang="zh-Hant" href="/zh-Hant/privacy.html"><link rel="alternate" hreflang="ja" href="/ja/privacy.html"><link rel="alternate" hreflang="de" href="/de/privacy.html"><link rel="alternate" hreflang="es" href="/es/privacy.html"><link rel="alternate" hreflang="fr" href="/fr/privacy.html"><link rel="alternate" hreflang="pt-BR" href="/pt-BR/privacy.html"><link rel="alternate" hreflang="ko" href="/ko/privacy.html"><link rel="alternate" hreflang="it" href="/it/privacy.html"><link rel="alternate" hreflang="nl" href="/nl/privacy.html"><link rel="alternate" hreflang="hi" href="/hi/privacy.html"><link rel="alternate" hreflang="id" href="/id/privacy.html"><link rel="alternate" hreflang="vi" href="/vi/privacy.html"><link rel="alternate" hreflang="x-default" href="/privacy.html">
 <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
 <link rel="stylesheet" href="/assets/style.css">
@@ -26,11 +26,11 @@
 <div class="container">
 
 <h1>Kebijakan privasi</h1>
-<p class="meta">Terakhir diperbarui: 03-06-2026</p>
+<p class="meta">Terakhir diperbarui: 02-07-2026</p>
 
 <p class="source-note">Terjemahan ini bersifat referensi. Untuk interpretasi hukum, versi bahasa Inggris yang berlaku.</p>
 
-<p>ReportWise («aplikasi») adalah brankas pribadi untuk gambar laporan medis. Kebijakan ini menjelaskan data apa yang diproses, di mana lokasinya, apa yang dikirim melalui jaringan saat melakukan analisis dengan AI, dan bagaimana Anda mengelola atau menghapusnya.</p>
+<p>ReportWise («aplikasi») adalah brankas pribadi untuk gambar laporan medis. Kebijakan ini menjelaskan data apa yang diproses, di mana lokasinya, apa yang dibagikan dengan OpenAI saat melakukan analisis dengan AI, dan bagaimana Anda mengelola atau menghapusnya.</p>
 
 <h2>1. Data yang tetap di perangkat Anda</h2>
 <ul>
@@ -40,24 +40,25 @@
 </ul>
 
 <h2>2. Data yang meninggalkan perangkat — hanya saat Anda meminta</h2>
-<p>Saat Anda menekan <strong>Analisis</strong>:</p>
+<p>Sebelum aplikasi mengirim data laporan ke OpenAI untuk pertama kalinya, aplikasi meminta izin eksplisit Anda. Jika Anda menolak, tidak ada gambar laporan atau prompt yang diunggah dan tidak ada kredit analisis yang dikenakan. Saat Anda memberi izin dan menekan <strong>Analisis</strong>, data berikut dikirim via HTTPS ke proxy ReportWise di <code>api.reportwise.codeblog.net</code>:</p>
 <ul>
-  <li>gambar tertutup dalam rentang yang Anda pilih (hingga 20),</li>
-  <li>tanggal masing-masing gambar,</li>
-  <li>prompt bebas yang Anda tulis, dan</li>
-  <li>pengenal model yang Anda pilih</li>
+  <li>gambar laporan dalam rentang yang Anda pilih, termasuk penutupan yang Anda terapkan (hingga 20 gambar),</li>
+  <li>tanggal masing-masing laporan,</li>
+  <li>prompt atau pertanyaan bebas yang Anda tulis, dan</li>
+  <li>pengenal model yang Anda pilih.</li>
 </ul>
-<p>dikirim via HTTPS ke proxy ReportWise di <code>api.reportwise.codeblog.net</code>. Proxy meneruskan ke penyedia AI visual pihak ketiga (dapat dikonfigurasi; yang aktif tampil di pemilih model aplikasi) dan mengembalikan respons model ke ponsel Anda.</p>
+<p>Proxy ReportWise meneruskan data tersebut ke <strong>OpenAI</strong> untuk menghasilkan penjelasan yang Anda minta, lalu mengembalikan respons OpenAI ke ponsel Anda.</p>
 
 <h2>3. Apa yang disimpan server ReportWise</h2>
 <ul>
-  <li><strong>Gambar dan prompt tidak disimpan</strong> di server kami. Diteruskan ke penyedia, lalu dibuang setelah respons.</li>
-  <li><strong>Catatan tugas AI</strong> disimpan — ID akun anonim, model yang diminta, stempel waktu, status, dan kredit yang ditagih — untuk kuota, pengembalian dana, dan diagnosis. <strong>Tanpa konten gambar.</strong></li>
-  <li><strong>Catatan entitlement</strong> melacak sisa kredit analisis, status percobaan, dan (jika ada) pengenal pembelian platform.</li>
+  <li><strong>Gambar dan prompt tidak disimpan</strong> di server kami. Diteruskan ke OpenAI, lalu dibuang setelah respons.</li>
+  <li><strong>Hasil AI</strong> dapat disimpan sementara dalam bentuk terenkripsi agar perangkat Anda dapat mengambil respons. Hasil tersebut kedaluwarsa otomatis dan tidak disimpan jangka panjang.</li>
+  <li><strong>Catatan tugas AI</strong> disimpan: ID akun anonim, model yang diminta, stempel waktu, status, dan kredit yang ditagih atau dikembalikan. Kami menggunakannya untuk kuota, pengembalian dana, dan diagnosis. Catatan ini tidak berisi konten gambar atau prompt Anda.</li>
+  <li><strong>Catatan entitlement</strong> melacak sisa kredit analisis, status kredit gratis, pengenal pembelian platform jika ada, dan status persetujuan berbagi data dengan OpenAI.</li>
 </ul>
 
-<h2>4. Penyedia AI pihak ketiga</h2>
-<p>Penyedia aktif menerima gambar tertutup, prompt Anda, dan nama model. Penanganan oleh mereka tunduk pada kebijakan privasi mereka sendiri. Jika tidak ingin mengirim apa pun, cukup jangan jalankan analisis — setiap analisis dimulai oleh Anda.</p>
+<h2>4. OpenAI</h2>
+<p>ReportWise saat ini menggunakan OpenAI sebagai penyedia AI pihak ketiga. OpenAI menerima gambar laporan yang dipilih, termasuk penutupan yang Anda terapkan, tanggal laporan, prompt Anda, dan nama model hanya setelah izin eksplisit Anda di aplikasi dan hanya saat Anda menjalankan analisis. Penanganan data tersebut oleh OpenAI tunduk pada ketentuan privasi OpenAI. Anda dapat memilih untuk tidak berbagi data dengan OpenAI dengan menolak izin atau tidak menjalankan analisis.</p>
 
 <h2>5. Akun dan pengenal</h2>
 <ul>
@@ -67,13 +68,14 @@
 </ul>
 
 <h2>6. Pembelian dalam aplikasi</h2>
-<p>Pembelian melalui Apple StoreKit atau Google Play Billing. Platform memberi tahu server kami pengenal transaksi untuk memverifikasi pembelian dan menambah kredit. Kami tidak melihat atau menyimpan data pembayaran.</p>
+<p>Di iOS, paket kredit analisis dijual hanya melalui Apple In-App Purchase menggunakan StoreKit. Di Android, pembelian melalui Google Play Billing. Platform memberi tahu server kami pengenal transaksi dan informasi produk untuk memverifikasi pembelian dan menambah kredit. Kami tidak melihat atau menyimpan data pembayaran.</p>
 
 <h2>7. Hak Anda</h2>
 <ul>
   <li><strong>Ekspor</strong>: buat <code>.rwarchive</code> terenkripsi dari aplikasi.</li>
   <li><strong>Hapus lokal</strong>: menghapus laporan akan menghapus berkasnya dari perangkat.</li>
-  <li><strong>Hapus catatan sisi server</strong>: kirim email ke <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> dari akun Google yang ditautkan, atau sertakan ID akun anonim; kami akan menghapus entitlement dan catatan tugas AI.</li>
+  <li><strong>Hapus akun Anda di aplikasi</strong>: buka <strong>Me → Privacy &amp; Account → Delete Account</strong>. Ini menghapus akun anonim sisi server, identitas perangkat, pengenal akun tertaut, entitlement dan kredit, catatan pemberian pembelian, catatan tugas AI, dan catatan persetujuan yang terkait dengan akun tersebut. Ini juga menghapus data lokal ReportWise dari perangkat itu.</li>
+  <li><strong>Minta bantuan</strong>: jika Anda tidak dapat menggunakan alur penghapusan di aplikasi, kirim email ke <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> dari akun Google yang ditautkan, atau sertakan ID akun anonim.</li>
   <li>Jika Anda di EEA, UK, atau California, Anda memiliki hak akses dan koreksi tambahan; alamat yang sama.</li>
 </ul>
 
@@ -84,7 +86,7 @@
 <p>Transportasi hanya HTTPS. Ekspor lokal dienkripsi dengan frasa sandi pilihan Anda. Kami tidak meneruskan gambar tidak tertutup atas nama Anda — penutupan dilakukan dan dipateri pada gambar di perangkat sebelum unggah.</p>
 
 <h2>10. Bukan saran medis</h2>
-<p>ReportWise bukan alat medis. Keluaran AI bersifat edukatif, dapat keliru, dan bukan pengganti nasihat tenaga medis.</p>
+<p>ReportWise bukan alat medis. Keluaran AI bersifat edukatif, dapat keliru, dan bukan pengganti nasihat tenaga medis. Aplikasi menampilkan bagian sumber atau kutipan bersama penjelasan AI jika tersedia agar Anda dapat meninjau dasar informasi tersebut.</p>
 
 <h2>11. Perubahan</h2>
 <p>Jika kebijakan diubah, tanggal di atas diperbarui dan untuk perubahan material akan ada notifikasi di aplikasi saat berikutnya dibuka.</p>

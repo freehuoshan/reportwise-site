@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chính sách quyền riêng tư — ReportWise</title>
-<meta name="description" content="ReportWise xử lý dữ liệu của bạn như thế nào: cái gì ở lại trên thiết bị, cái gì truyền tới nhà cung cấp AI khi phân tích, và bạn kiểm soát những gì.">
+<meta name="description" content="ReportWise xử lý dữ liệu của bạn như thế nào: cái gì ở lại trên thiết bị, cái gì được chia sẻ với OpenAI khi phân tích, và bạn kiểm soát những gì.">
 <link rel="alternate" hreflang="en" href="/en/privacy.html"><link rel="alternate" hreflang="zh" href="/zh/privacy.html"><link rel="alternate" hreflang="zh-Hant" href="/zh-Hant/privacy.html"><link rel="alternate" hreflang="ja" href="/ja/privacy.html"><link rel="alternate" hreflang="de" href="/de/privacy.html"><link rel="alternate" hreflang="es" href="/es/privacy.html"><link rel="alternate" hreflang="fr" href="/fr/privacy.html"><link rel="alternate" hreflang="pt-BR" href="/pt-BR/privacy.html"><link rel="alternate" hreflang="ko" href="/ko/privacy.html"><link rel="alternate" hreflang="it" href="/it/privacy.html"><link rel="alternate" hreflang="nl" href="/nl/privacy.html"><link rel="alternate" hreflang="hi" href="/hi/privacy.html"><link rel="alternate" hreflang="id" href="/id/privacy.html"><link rel="alternate" hreflang="vi" href="/vi/privacy.html"><link rel="alternate" hreflang="x-default" href="/privacy.html">
 <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
 <link rel="stylesheet" href="/assets/style.css">
@@ -26,11 +26,11 @@
 <div class="container">
 
 <h1>Chính sách quyền riêng tư</h1>
-<p class="meta">Cập nhật lần cuối: 03-06-2026</p>
+<p class="meta">Cập nhật lần cuối: 02-07-2026</p>
 
 <p class="source-note">Bản dịch này chỉ để tham khảo. Khi có khác biệt pháp lý, bản tiếng Anh là bản gốc có hiệu lực.</p>
 
-<p>ReportWise («ứng dụng») là két riêng cho hình ảnh phiếu xét nghiệm. Chính sách này mô tả dữ liệu được xử lý, nơi lưu trữ, dữ liệu nào truyền qua mạng khi bạn yêu cầu phân tích bằng AI, và cách bạn kiểm soát hoặc xoá.</p>
+<p>ReportWise («ứng dụng») là két riêng cho hình ảnh phiếu xét nghiệm. Chính sách này mô tả dữ liệu được xử lý, nơi lưu trữ, dữ liệu nào được chia sẻ với OpenAI khi bạn yêu cầu phân tích bằng AI, và cách bạn kiểm soát hoặc xoá.</p>
 
 <h2>1. Dữ liệu ở lại trên thiết bị</h2>
 <ul>
@@ -40,24 +40,25 @@
 </ul>
 
 <h2>2. Dữ liệu rời thiết bị — chỉ khi bạn yêu cầu</h2>
-<p>Khi chạm <strong>Phân tích</strong>:</p>
+<p>Trước khi ứng dụng gửi dữ liệu phiếu cho OpenAI lần đầu, ứng dụng sẽ xin phép rõ ràng từ bạn. Nếu bạn từ chối, không có hình ảnh phiếu hoặc câu lệnh nào được tải lên và không trừ credit phân tích. Khi bạn cho phép và chạm <strong>Phân tích</strong>, dữ liệu sau được gửi qua HTTPS tới proxy ReportWise tại <code>api.reportwise.codeblog.net</code>:</p>
 <ul>
-  <li>các ảnh đã che trong khoảng thời gian bạn chọn (tối đa 20),</li>
-  <li>ngày của từng ảnh,</li>
-  <li>câu lệnh tự do bạn viết và</li>
-  <li>mã định danh mô hình bạn chọn</li>
+  <li>hình ảnh phiếu trong khoảng thời gian bạn chọn, bao gồm phần che mà bạn đã áp dụng (tối đa 20 ảnh),</li>
+  <li>ngày của từng phiếu,</li>
+  <li>câu lệnh hoặc câu hỏi tự do bạn viết và</li>
+  <li>mã định danh mô hình bạn chọn.</li>
 </ul>
-<p>được gửi qua HTTPS tới proxy ReportWise ở <code>api.reportwise.codeblog.net</code>. Proxy chuyển tiếp tới nhà cung cấp AI thị giác bên thứ ba (có thể cấu hình; nhà cung cấp đang hoạt động hiển thị trong bộ chọn mô hình của ứng dụng) và trả phản hồi của mô hình về điện thoại của bạn.</p>
+<p>Proxy ReportWise chuyển tiếp dữ liệu đó tới <strong>OpenAI</strong> để tạo phần giải thích bạn yêu cầu, rồi trả phản hồi của OpenAI về điện thoại của bạn.</p>
 
 <h2>3. Máy chủ ReportWise giữ những gì</h2>
 <ul>
-  <li><strong>Ảnh và câu lệnh không được lưu</strong> trên máy chủ của chúng tôi. Chúng được chuyển tiếp tới nhà cung cấp rồi loại bỏ sau khi có phản hồi.</li>
-  <li><strong>Bản ghi tác vụ AI</strong> được lưu — ID tài khoản ẩn danh, mô hình được yêu cầu, dấu thời gian, trạng thái, credit đã trừ — cho hạn ngạch, hoàn tiền và chẩn đoán. <strong>Không chứa nội dung ảnh.</strong></li>
-  <li><strong>Bản ghi quyền</strong> theo dõi credit còn lại, trạng thái dùng thử, và (nếu có) mã giao dịch nền tảng.</li>
+  <li><strong>Ảnh và câu lệnh không được lưu</strong> trên máy chủ của chúng tôi. Chúng được chuyển tiếp tới OpenAI rồi loại bỏ sau khi có phản hồi.</li>
+  <li><strong>Kết quả AI</strong> có thể được lưu tạm thời ở dạng mã hoá để thiết bị của bạn lấy phản hồi. Chúng tự động hết hạn và không được lưu dài hạn.</li>
+  <li><strong>Bản ghi tác vụ AI</strong> được lưu: ID tài khoản ẩn danh, mô hình được yêu cầu, dấu thời gian, trạng thái, credit đã trừ hoặc hoàn lại. Chúng tôi dùng để quản lý hạn ngạch, hoàn tiền và chẩn đoán. Bản ghi này không chứa nội dung ảnh hoặc câu lệnh của bạn.</li>
+  <li><strong>Bản ghi quyền</strong> theo dõi credit phân tích còn lại, trạng thái credit miễn phí, mã giao dịch nền tảng nếu có, và trạng thái đồng ý chia sẻ dữ liệu với OpenAI.</li>
 </ul>
 
-<h2>4. Nhà cung cấp AI bên thứ ba</h2>
-<p>Nhà cung cấp đang hoạt động nhận ảnh đã che, câu lệnh và tên mô hình. Việc xử lý của họ tuân theo chính sách riêng của họ. Nếu không muốn gửi gì, đừng chạy phân tích — mọi phân tích đều do bạn khởi tạo.</p>
+<h2>4. OpenAI</h2>
+<p>ReportWise hiện sử dụng OpenAI làm nhà cung cấp AI bên thứ ba. OpenAI nhận hình ảnh phiếu đã chọn, bao gồm phần che mà bạn áp dụng, ngày của phiếu, câu lệnh của bạn và tên mô hình chỉ sau khi bạn cho phép rõ ràng trong ứng dụng và chỉ khi bạn chạy phân tích. Việc OpenAI xử lý dữ liệu đó tuân theo điều khoản quyền riêng tư của OpenAI. Bạn có thể không chia sẻ dữ liệu với OpenAI bằng cách từ chối cho phép hoặc không chạy phân tích.</p>
 
 <h2>5. Tài khoản và mã định danh</h2>
 <ul>
@@ -67,13 +68,14 @@
 </ul>
 
 <h2>6. Mua trong ứng dụng</h2>
-<p>Việc mua đi qua Apple StoreKit hoặc Google Play Billing. Nền tảng thông báo mã giao dịch cho máy chủ của chúng tôi để xác thực và cộng credit. Chúng tôi không nhìn thấy và không lưu dữ liệu thanh toán.</p>
+<p>Trên iOS, gói credit phân tích chỉ được bán qua Apple In-App Purchase bằng StoreKit. Trên Android, giao dịch mua đi qua Google Play Billing. Nền tảng thông báo mã giao dịch và thông tin sản phẩm cho máy chủ của chúng tôi để xác thực và cộng credit. Chúng tôi không nhìn thấy và không lưu dữ liệu thanh toán.</p>
 
 <h2>7. Quyền của bạn</h2>
 <ul>
   <li><strong>Xuất</strong>: tạo <code>.rwarchive</code> đã mã hoá từ trong ứng dụng.</li>
   <li><strong>Xoá cục bộ</strong>: xoá một phiếu sẽ xoá luôn các tệp trên thiết bị.</li>
-  <li><strong>Xoá bản ghi phía máy chủ</strong>: gửi email tới <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> từ tài khoản Google đã liên kết, hoặc kèm ID tài khoản ẩn danh; chúng tôi sẽ xoá quyền và bản ghi tác vụ AI.</li>
+  <li><strong>Xoá tài khoản trong ứng dụng</strong>: vào <strong>Me → Privacy &amp; Account → Delete Account</strong>. Thao tác này xoá tài khoản ẩn danh phía máy chủ, danh tính thiết bị, mã định danh tài khoản đã liên kết, quyền và credit, bản ghi cấp phát mua hàng, bản ghi tác vụ AI và bản ghi đồng ý gắn với tài khoản đó. Nó cũng xoá dữ liệu ReportWise cục bộ khỏi thiết bị đó.</li>
+  <li><strong>Yêu cầu trợ giúp</strong>: nếu bạn không thể dùng luồng xoá trong ứng dụng, gửi email tới <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> từ tài khoản Google đã liên kết, hoặc kèm ID tài khoản ẩn danh.</li>
   <li>Nếu bạn ở EEA, Vương quốc Anh hoặc California, bạn có thêm quyền tiếp cận và đính chính; dùng chung địa chỉ trên.</li>
 </ul>
 
@@ -84,7 +86,7 @@
 <p>Chỉ truyền qua HTTPS. Tệp xuất cục bộ được mã hoá bằng cụm mật khẩu do bạn chọn. Chúng tôi không thay bạn gửi ảnh chưa che — việc che được thực hiện và khắc vào ảnh ngay trên thiết bị trước khi tải lên.</p>
 
 <h2>10. Không phải tư vấn y khoa</h2>
-<p>ReportWise không phải thiết bị y tế. Đầu ra của AI mang tính giáo dục, có thể sai và không thay thế lời khuyên của người hành nghề y.</p>
+<p>ReportWise không phải thiết bị y tế. Đầu ra của AI mang tính giáo dục, có thể sai và không thay thế lời khuyên của người hành nghề y. Ứng dụng hiển thị phần nguồn hoặc trích dẫn cùng giải thích AI khi có để bạn có thể xem lại cơ sở của thông tin.</p>
 
 <h2>11. Thay đổi</h2>
 <p>Nếu chính sách thay đổi, chúng tôi sẽ cập nhật ngày ở trên và, với thay đổi quan trọng, hiển thị thông báo trong ứng dụng ở lần khởi chạy tiếp theo.</p>

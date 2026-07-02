@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>隱私政策 — ReportWise</title>
-<meta name="description" content="ReportWise 如何處理你的資料:哪些留在裝置上、呼叫 AI 時哪些會上傳、你可如何控制與刪除。">
+<meta name="description" content="ReportWise 如何處理你的資料:哪些留在裝置上、請求分析時哪些會分享給 OpenAI、你可如何控制與刪除。">
 <link rel="alternate" hreflang="en" href="/en/privacy.html">
 <link rel="alternate" hreflang="zh" href="/zh/privacy.html">
 <link rel="alternate" hreflang="zh-Hant" href="/zh-Hant/privacy.html">
@@ -43,9 +43,11 @@
 <div class="container">
 
 <h1>隱私政策</h1>
-<p class="meta">最近更新:2026-06-03</p>
+<p class="meta">最近更新:2026-07-02</p>
 
-<p>ReportWise(以下簡稱「本 App」)是一個私密的檢查報告管理工具。本政策說明本 App 處理哪些資料、它們存放在哪裡、發起 AI 分析時哪些資料會跨網路傳輸,以及你如何控制與刪除這些資料。</p>
+<p class="source-note">本翻譯僅供參考。法律解釋以英文版本為準。</p>
+
+<p>ReportWise(以下簡稱「本 App」)是一個私密的檢查報告管理工具。本政策說明本 App 處理哪些資料、它們存放在哪裡、當你請求 AI 分析時哪些資料會分享給 OpenAI,以及你如何控制與刪除這些資料。</p>
 
 <h2>1. 留在你裝置上的資料</h2>
 <ul>
@@ -55,24 +57,25 @@
 </ul>
 
 <h2>2. 僅在你主動發起時才會離開裝置的資料</h2>
-<p>當你在 App 內點選 <strong>分析</strong> 時:</p>
+<p>在本 App 首次向 OpenAI 傳送報告資料之前,會先請求你的明確同意。如果你拒絕,不會上傳報告圖片或提示詞,也不會扣除分析額度。當你同意並在 App 內點選 <strong>分析</strong> 時,以下資料會透過 HTTPS 上傳到 ReportWise 的代理伺服器 <code>api.reportwise.codeblog.net</code>:</p>
 <ul>
-  <li>你選定時間段內的遮擋後圖片(最多 20 張),</li>
-  <li>每張圖片對應的日期,</li>
-  <li>你自行輸入的提示詞,</li>
-  <li>你選定的模型識別符號</li>
+  <li>你選定時間段內的報告圖片,包含你已進行的遮擋處理(最多 20 張),</li>
+  <li>每張圖片對應的報告日期,</li>
+  <li>你自行輸入的提示詞或問題,</li>
+  <li>你選定的模型識別符號。</li>
 </ul>
-<p>會經由 HTTPS 上傳到 ReportWise 的代理伺服器 <code>api.reportwise.codeblog.net</code>。代理立即將這些資料轉發給第三方視覺 AI 提供方(可在 App 的模型選擇中檢視當前生效的提供方),並將模型回應送回你的手機。</p>
+<p>ReportWise 代理會將這些資料轉發給 <strong>OpenAI</strong>,用於產生你請求的解釋,然後將 OpenAI 的回覆送回你的手機。</p>
 
 <h2>3. ReportWise 伺服器保留哪些資料</h2>
 <ul>
-  <li><strong>圖片與提示詞不會在我們伺服器上長期保存。</strong>它們被轉發給 AI 提供方,回應傳回後即丟棄。</li>
-  <li>會保留一條 <strong>AI 任務記錄</strong>——匿名帳號 ID、請求的模型、時間戳記、狀態、扣除的 credit,用於配額管理、失敗退款、故障排查。<strong>不含圖片內容。</strong></li>
-  <li>會保留一條 <strong>權益記錄</strong>,追蹤你剩餘的分析 credit、試用狀態,以及(若有)平台內購的訂單識別符號。</li>
+  <li><strong>圖片與提示詞不會在我們伺服器上長期保存。</strong>它們會被轉發給 OpenAI,回應傳回後即丟棄。</li>
+  <li><strong>AI 結果</strong>可能會以加密形式短暫保存,以便你的裝置取回回覆。它們會自動過期,不會長期保存。</li>
+  <li>會保留一條 <strong>AI 任務記錄</strong>:匿名帳號 ID、請求的模型、時間戳記、狀態、扣除或退回的 credit,用於配額管理、失敗退款、故障排查。它不包含圖片內容或你的提示詞。</li>
+  <li>會保留一條 <strong>權益記錄</strong>,追蹤你剩餘的分析 credit、免費額度狀態、平台內購訂單識別符號(若有),以及 OpenAI 資料共享同意狀態。</li>
 </ul>
 
-<h2>4. 第三方 AI 提供方</h2>
-<p>生效的提供方會收到你遮擋後的圖片、提示詞與模型名稱。這些資料的後續處理遵循其自身的隱私政策。若你不願傳送任何資料,不發起分析即可——每次分析都由你主動觸發。</p>
+<h2>4. OpenAI</h2>
+<p>ReportWise 目前使用 OpenAI 作為第三方 AI 提供方。OpenAI 只會在你於 App 內明確同意且發起分析時,收到你選定的報告圖片(包含你已進行的遮擋處理)、報告日期、你的提示詞以及模型名稱。OpenAI 對這些資料的處理遵循 OpenAI 自身的隱私條款。若你不願與 OpenAI 分享資料,可以拒絕同意或不發起分析。</p>
 
 <h2>5. 帳號與識別符號</h2>
 <ul>
@@ -82,13 +85,14 @@
 </ul>
 
 <h2>6. 內購</h2>
-<p>購買由 Apple StoreKit 或 Google Play Billing 處理。平台會告訴我們的伺服器交易識別符號,以驗證購買並為帳號儲值。我們不會看到也不會保存銀行卡資訊。</p>
+<p>在 iOS 上,分析額度包僅透過 Apple In-App Purchase 和 StoreKit 銷售。在 Android 上,購買透過 Google Play Billing 完成。平台會告訴我們的伺服器交易識別符號和商品資訊,以驗證購買並為帳號儲值。我們不會看到也不會保存銀行卡資訊。</p>
 
 <h2>7. 你的權利</h2>
 <ul>
   <li><strong>匯出</strong>:在 App 內產生加密的 <code>.rwarchive</code> 檔。</li>
   <li><strong>本機刪除</strong>:刪除報告時,對應檔案即從裝置上移除。</li>
-  <li><strong>刪除伺服器側記錄</strong>:從已綁定的 Google 帳號寄信至 <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>,或在信中附上匿名帳號 ID,我們會清除權益與 AI 任務記錄。</li>
+  <li><strong>在 App 內刪除帳號</strong>:進入 <strong>Me → Privacy &amp; Account → Delete Account</strong>。這會刪除與該帳號綁定的伺服器側匿名帳號、裝置身分、已綁定帳號識別符號、權益和 credit 記錄、購買發放記錄、AI 任務記錄以及同意記錄,並清除該裝置上的本機 ReportWise 資料。</li>
+  <li><strong>請求協助</strong>:如果你無法使用 App 內刪除流程,可以從已綁定的 Google 帳號寄信至 <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a>,或在信中附上匿名帳號 ID。</li>
   <li>若你位於歐盟、英國或加州,享有存取與修正個人資料的額外權利,透過同一信箱即可聯絡。</li>
 </ul>
 
@@ -99,7 +103,7 @@
 <p>傳輸全程使用 HTTPS。本機匯出由你選擇通行碼加密。我們不會代你傳送未遮擋的圖片——遮擋在裝置上完成並燒進圖片後才會上傳。</p>
 
 <h2>10. 不構成醫療建議</h2>
-<p>ReportWise 不是醫療器材,AI 的輸出僅供學習參考,可能存在錯誤,不能取代執業醫師的意見。</p>
+<p>ReportWise 不是醫療器材,AI 的輸出僅供學習參考,可能存在錯誤,不能取代執業醫師的意見。在可用時,本 App 會隨 AI 解釋顯示來源或引用區塊,協助你核對相關資訊的依據。</p>
 
 <h2>11. 政策變更</h2>
 <p>若本政策發生變更,我們會更新上方的「最近更新」日期。如為實質性變更,會在你下次開啟 App 時於應用內提示。</p>

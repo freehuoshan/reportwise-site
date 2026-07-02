@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Política de privacidade — ReportWise</title>
-<meta name="description" content="Como o ReportWise trata seus dados: o que fica no dispositivo, o que vai para provedores de IA quando você pede uma análise e o que você pode controlar.">
+<meta name="description" content="Como o ReportWise trata seus dados: o que fica no dispositivo, o que é compartilhado com a OpenAI quando você pede uma análise e o que você pode controlar.">
 <link rel="alternate" hreflang="en" href="/en/privacy.html"><link rel="alternate" hreflang="zh" href="/zh/privacy.html"><link rel="alternate" hreflang="zh-Hant" href="/zh-Hant/privacy.html"><link rel="alternate" hreflang="ja" href="/ja/privacy.html"><link rel="alternate" hreflang="de" href="/de/privacy.html"><link rel="alternate" hreflang="es" href="/es/privacy.html"><link rel="alternate" hreflang="fr" href="/fr/privacy.html"><link rel="alternate" hreflang="pt-BR" href="/pt-BR/privacy.html"><link rel="alternate" hreflang="ko" href="/ko/privacy.html"><link rel="alternate" hreflang="it" href="/it/privacy.html"><link rel="alternate" hreflang="nl" href="/nl/privacy.html"><link rel="alternate" hreflang="hi" href="/hi/privacy.html"><link rel="alternate" hreflang="id" href="/id/privacy.html"><link rel="alternate" hreflang="vi" href="/vi/privacy.html"><link rel="alternate" hreflang="x-default" href="/privacy.html">
 <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
 <link rel="stylesheet" href="/assets/style.css">
@@ -26,11 +26,11 @@
 <div class="container">
 
 <h1>Política de privacidade</h1>
-<p class="meta">Última atualização: 03/06/2026</p>
+<p class="meta">Última atualização: 02/07/2026</p>
 
 <p class="source-note">Esta tradução é uma referência. Em caso de divergência jurídica, prevalece a versão em inglês.</p>
 
-<p>ReportWise (o «app») é um cofre privado para imagens de laudos médicos. Esta política descreve quais dados o app trata, onde ficam, o que trafega pela rede quando você pede uma análise por IA e como você controla ou apaga.</p>
+<p>ReportWise (o «app») é um cofre privado para imagens de laudos médicos. Esta política descreve quais dados o app trata, onde ficam, o que é compartilhado com a OpenAI quando você pede uma análise por IA e como você controla ou apaga.</p>
 
 <h2>1. Dados que ficam no seu dispositivo</h2>
 <ul>
@@ -40,24 +40,25 @@
 </ul>
 
 <h2>2. Dados que saem do dispositivo — só quando você pede</h2>
-<p>Ao tocar em <strong>Analisar</strong>:</p>
+<p>Antes de o app enviar dados de laudos para a OpenAI pela primeira vez, ele pede sua permissão explícita. Se você recusar, nenhuma imagem de laudo ou texto é enviada e nenhum crédito de análise é cobrado. Quando você permite e toca em <strong>Analisar</strong>, os dados abaixo são enviados por HTTPS para o proxy ReportWise em <code>api.reportwise.codeblog.net</code>:</p>
 <ul>
-  <li>as imagens ocultadas do período escolhido (até 20),</li>
-  <li>as datas por imagem,</li>
-  <li>seu texto livre e</li>
-  <li>o identificador do modelo escolhido</li>
+  <li>as imagens de laudos do período escolhido, com as ocultações que você aplicou (até 20 imagens),</li>
+  <li>as datas de cada laudo,</li>
+  <li>seu texto ou pergunta livre e</li>
+  <li>o identificador do modelo escolhido.</li>
 </ul>
-<p>são enviados por HTTPS para o proxy ReportWise em <code>api.reportwise.codeblog.net</code>. O proxy encaminha imediatamente para um provedor de IA visual de terceiros (configurável; o ativo aparece no seletor de modelos do app) e devolve a resposta ao seu celular.</p>
+<p>O proxy ReportWise encaminha esses dados para a <strong>OpenAI</strong> para gerar a explicação solicitada e devolve a resposta da OpenAI ao seu celular.</p>
 
 <h2>3. O que o servidor do ReportWise mantém</h2>
 <ul>
-  <li><strong>Imagens e textos não ficam armazenados</strong> no nosso servidor. São encaminhados ao provedor e descartados após a resposta.</li>
-  <li>Mantemos um <strong>registro de tarefa de IA</strong> — id de conta anônima, modelo solicitado, carimbos de tempo, status e créditos cobrados — para cota, reembolsos e diagnóstico. <strong>Sem conteúdo de imagem.</strong></li>
-  <li>Um <strong>registro de autorização</strong> guarda seu crédito restante, status de teste e (se houver) o identificador de compra da plataforma.</li>
+  <li><strong>Imagens e textos não ficam armazenados</strong> no nosso servidor. São encaminhados à OpenAI e descartados após a resposta.</li>
+  <li><strong>Resultados de IA</strong> podem ser mantidos temporariamente de forma criptografada para que seu dispositivo recupere a resposta. Eles expiram automaticamente e não são mantidos a longo prazo.</li>
+  <li>Mantemos um <strong>registro de tarefa de IA</strong>: id de conta anônima, modelo solicitado, carimbos de tempo, status e créditos cobrados ou reembolsados. Usamos isso para cota, reembolsos e diagnóstico. Não contém conteúdo de imagem nem seu texto.</li>
+  <li>Um <strong>registro de autorização</strong> guarda seus créditos de análise restantes, estado de créditos gratuitos, identificador de compra da plataforma se houver, e status de consentimento para compartilhamento de dados com a OpenAI.</li>
 </ul>
 
-<h2>4. Provedores de IA terceiros</h2>
-<p>O provedor ativo recebe as imagens ocultadas, seu texto e o nome do modelo. O tratamento por eles segue a política deles. Se não quiser enviar nada, não rode análise — toda análise é iniciada por você.</p>
+<h2>4. OpenAI</h2>
+<p>O ReportWise usa atualmente a OpenAI como provedora terceirizada de IA. A OpenAI recebe as imagens de laudos selecionadas com as ocultações que você aplicou, as datas dos laudos, seu texto e o nome do modelo somente depois da sua permissão explícita no app e somente quando você executa uma análise. O tratamento desses dados pela OpenAI segue os próprios termos de privacidade da OpenAI. Você pode optar por não compartilhar dados com a OpenAI recusando a permissão ou não executando uma análise.</p>
 
 <h2>5. Contas e identificadores</h2>
 <ul>
@@ -67,13 +68,14 @@
 </ul>
 
 <h2>6. Compras no app</h2>
-<p>As compras passam por Apple StoreKit ou Google Play Billing. A plataforma informa o identificador da transação ao servidor para verificar a compra e creditar a conta. Não vemos nem armazenamos dados de pagamento.</p>
+<p>No iOS, pacotes de créditos de análise são vendidos apenas por Apple In-App Purchase usando StoreKit. No Android, as compras passam pelo Google Play Billing. A plataforma informa ao nosso servidor o identificador da transação e as informações do produto para verificar a compra e creditar a conta. Não vemos nem armazenamos dados de pagamento.</p>
 
 <h2>7. Seus direitos</h2>
 <ul>
   <li><strong>Exportar</strong>: gere um <code>.rwarchive</code> criptografado pelo app.</li>
   <li><strong>Excluir localmente</strong>: excluir um laudo remove os arquivos do dispositivo.</li>
-  <li><strong>Excluir registros do servidor</strong>: escreva para <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> a partir da conta Google vinculada, ou inclua o id de conta anônima; removeremos autorização e tarefas de IA.</li>
+  <li><strong>Excluir sua conta no app</strong>: acesse <strong>Me → Privacy &amp; Account → Delete Account</strong>. Isso exclui a conta anônima no servidor, identidade do dispositivo, identificadores de contas vinculadas, autorização e créditos, registros de concessão de compra, tarefas de IA e consentimentos ligados a essa conta. Também apaga os dados locais do ReportWise nesse dispositivo.</li>
+  <li><strong>Pedir ajuda</strong>: se você não conseguir usar o fluxo de exclusão no app, escreva para <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> a partir da conta Google vinculada, ou inclua o id de conta anônima.</li>
   <li>No EEE, Reino Unido ou Califórnia, você tem direitos adicionais de acesso e correção; mesmo endereço.</li>
 </ul>
 
@@ -84,7 +86,7 @@
 <p>Transporte apenas via HTTPS. As exportações locais são criptografadas com uma senha escolhida por você. Não transmitimos imagens não ocultadas por você: a ocultação é gravada na imagem no dispositivo antes do envio.</p>
 
 <h2>10. Não é orientação médica</h2>
-<p>O ReportWise não é um dispositivo médico. A saída da IA é educativa, pode estar errada e não substitui o conselho de um(a) profissional.</p>
+<p>O ReportWise não é um dispositivo médico. A saída da IA é educativa, pode estar errada e não substitui o conselho de um(a) profissional. O app mostra seções de fontes ou citações com as explicações de IA quando disponíveis para que você possa revisar a base das informações.</p>
 
 <h2>11. Alterações</h2>
 <p>Em caso de alteração, atualizamos a data acima e, para mudanças materiais, exibimos um aviso no app ao próximo abrir.</p>

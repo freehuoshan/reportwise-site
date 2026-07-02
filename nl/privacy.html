@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacybeleid — ReportWise</title>
-<meta name="description" content="Hoe ReportWise met je gegevens omgaat: wat op je toestel blijft, wat naar AI-aanbieders gaat bij analyse en wat je kunt regelen.">
+<meta name="description" content="Hoe ReportWise met je gegevens omgaat: wat op je toestel blijft, wat met OpenAI wordt gedeeld bij analyse en wat je kunt regelen.">
 <link rel="alternate" hreflang="en" href="/en/privacy.html"><link rel="alternate" hreflang="zh" href="/zh/privacy.html"><link rel="alternate" hreflang="zh-Hant" href="/zh-Hant/privacy.html"><link rel="alternate" hreflang="ja" href="/ja/privacy.html"><link rel="alternate" hreflang="de" href="/de/privacy.html"><link rel="alternate" hreflang="es" href="/es/privacy.html"><link rel="alternate" hreflang="fr" href="/fr/privacy.html"><link rel="alternate" hreflang="pt-BR" href="/pt-BR/privacy.html"><link rel="alternate" hreflang="ko" href="/ko/privacy.html"><link rel="alternate" hreflang="it" href="/it/privacy.html"><link rel="alternate" hreflang="nl" href="/nl/privacy.html"><link rel="alternate" hreflang="hi" href="/hi/privacy.html"><link rel="alternate" hreflang="id" href="/id/privacy.html"><link rel="alternate" hreflang="vi" href="/vi/privacy.html"><link rel="alternate" hreflang="x-default" href="/privacy.html">
 <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
 <link rel="stylesheet" href="/assets/style.css">
@@ -26,11 +26,11 @@
 <div class="container">
 
 <h1>Privacybeleid</h1>
-<p class="meta">Laatst bijgewerkt: 03-06-2026</p>
+<p class="meta">Laatst bijgewerkt: 02-07-2026</p>
 
 <p class="source-note">Deze vertaling is ter referentie. Bij juridische geschillen is de Engelse versie leidend.</p>
 
-<p>ReportWise (de «app») is een privékluis voor afbeeldingen van medische uitslagen. Dit beleid beschrijft welke gegevens worden verwerkt, waar ze staan, wat over het netwerk gaat bij een AI-analyse en hoe je dat kunt regelen of verwijderen.</p>
+<p>ReportWise (de «app») is een privékluis voor afbeeldingen van medische uitslagen. Dit beleid beschrijft welke gegevens worden verwerkt, waar ze staan, wat met OpenAI wordt gedeeld bij een AI-analyse en hoe je dat kunt regelen of verwijderen.</p>
 
 <h2>1. Gegevens die op je toestel blijven</h2>
 <ul>
@@ -40,24 +40,25 @@
 </ul>
 
 <h2>2. Gegevens die het toestel verlaten — alleen op jouw verzoek</h2>
-<p>Bij een tik op <strong>Analyseren</strong>:</p>
+<p>Voordat de app voor het eerst uitslaggegevens naar OpenAI stuurt, vraagt zij om je uitdrukkelijke toestemming. Als je weigert, worden geen uitslagafbeeldingen of prompts geüpload en wordt geen analysecredit in rekening gebracht. Wanneer je toestemming geeft en op <strong>Analyseren</strong> tikt, worden de volgende gegevens via HTTPS naar de ReportWise-proxy op <code>api.reportwise.codeblog.net</code> gestuurd:</p>
 <ul>
-  <li>de afgedekte afbeeldingen in het gekozen bereik (maximaal 20),</li>
-  <li>de data per afbeelding,</li>
-  <li>jouw vrije prompt en</li>
-  <li>de gekozen modelaanduiding</li>
+  <li>de uitslagafbeeldingen in het gekozen bereik, met de afdekkingen die je hebt toegepast (maximaal 20 afbeeldingen),</li>
+  <li>de datum van elke uitslag,</li>
+  <li>jouw vrije prompt of vraag en</li>
+  <li>de gekozen modelaanduiding.</li>
 </ul>
-<p>worden via HTTPS naar de ReportWise-proxy op <code>api.reportwise.codeblog.net</code> verzonden. De proxy stuurt ze direct door naar een externe beeld-AI-aanbieder (configureerbaar; de actieve verschijnt in de modelkiezer in de app) en stuurt het antwoord terug naar je toestel.</p>
+<p>De ReportWise-proxy stuurt deze gegevens door naar <strong>OpenAI</strong> om de gevraagde uitleg te genereren en stuurt het antwoord van OpenAI terug naar je toestel.</p>
 
 <h2>3. Wat de ReportWise-server bewaart</h2>
 <ul>
-  <li><strong>Afbeeldingen en prompts worden niet bewaard</strong> op onze server. Ze worden doorgestuurd en daarna verwijderd.</li>
-  <li>Een <strong>AI-taakregistratie</strong> blijft staan: anonieme account-id, gevraagd model, tijdstempels, status en gefactureerde credits — voor quota, restituties en diagnose. <strong>Geen beeldinhoud.</strong></li>
-  <li>Een <strong>machtigingsregistratie</strong> volgt je resterende credit, proefstatus en (indien aanwezig) de aankoopidentificatie van het platform.</li>
+  <li><strong>Afbeeldingen en prompts worden niet bewaard</strong> op onze server. Ze worden naar OpenAI doorgestuurd en na het antwoord verwijderd.</li>
+  <li><strong>AI-resultaten</strong> kunnen tijdelijk versleuteld worden bewaard zodat je toestel het antwoord kan ophalen. Ze verlopen automatisch en worden niet langdurig bewaard.</li>
+  <li>Een <strong>AI-taakregistratie</strong> blijft staan: anonieme account-id, gevraagd model, tijdstempels, status en berekende of teruggegeven credits. We gebruiken dit voor quota, restituties en diagnose. Het bevat geen beeldinhoud en niet je prompt.</li>
+  <li>Een <strong>machtigingsregistratie</strong> volgt je resterende analysecredits, status van gratis credits, aankoopidentificatie van het platform indien aanwezig en toestemmingstatus voor gegevensdeling met OpenAI.</li>
 </ul>
 
-<h2>4. Externe AI-aanbieders</h2>
-<p>De actieve aanbieder ontvangt de afgedekte afbeeldingen, jouw prompt en de modelnaam. Hun verwerking volgt hun eigen privacyvoorwaarden. Wil je niets versturen, voer dan geen analyse uit — elke analyse start jij.</p>
+<h2>4. OpenAI</h2>
+<p>ReportWise gebruikt momenteel OpenAI als externe AI-aanbieder. OpenAI ontvangt de geselecteerde uitslagafbeeldingen met de afdekkingen die je hebt toegepast, de uitslagdatums, jouw prompt en de modelnaam alleen na jouw uitdrukkelijke toestemming in de app en alleen wanneer je een analyse uitvoert. De verwerking van die gegevens door OpenAI valt onder de eigen privacyvoorwaarden van OpenAI. Je kunt ervoor kiezen geen gegevens met OpenAI te delen door toestemming te weigeren of geen analyse uit te voeren.</p>
 
 <h2>5. Accounts en identifiers</h2>
 <ul>
@@ -67,13 +68,14 @@
 </ul>
 
 <h2>6. Aankopen in de app</h2>
-<p>Aankopen lopen via Apple StoreKit of Google Play Billing. Het platform geeft ons de transactie-id om de aankoop te verifiëren en credits bij te schrijven. We zien noch bewaren betaalgegevens.</p>
+<p>Op iOS worden analysecreditpakketten alleen verkocht via Apple In-App Purchase met StoreKit. Op Android lopen aankopen via Google Play Billing. Het platform geeft onze server de transactie-id en productinformatie om de aankoop te verifiëren en credits bij te schrijven. We zien noch bewaren betaalgegevens.</p>
 
 <h2>7. Jouw rechten</h2>
 <ul>
   <li><strong>Exporteren</strong>: maak een versleuteld <code>.rwarchive</code> vanuit de app.</li>
   <li><strong>Lokaal verwijderen</strong>: bij het verwijderen van een uitslag worden de bestanden van het toestel verwijderd.</li>
-  <li><strong>Serverzijde verwijderen</strong>: mail naar <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> vanuit je gekoppelde Google-account, of vermeld je anonieme account-id; we wissen machtiging en AI-taakregistraties.</li>
+  <li><strong>Je account in de app verwijderen</strong>: ga naar <strong>Me → Privacy &amp; Account → Delete Account</strong>. Dit verwijdert het server-side anonieme account, de apparaatidentiteit, gekoppelde account-id's, machtigings- en creditregistraties, aankooptoekenningsregistraties, AI-taakregistraties en toestemmingsregistraties voor dat account. Ook worden lokale ReportWise-gegevens van dat toestel gewist.</li>
+  <li><strong>Hulp vragen</strong>: als je het verwijderproces in de app niet kunt gebruiken, mail dan naar <a href="mailto:reportwise.support@codeblog.net">reportwise.support@codeblog.net</a> vanuit je gekoppelde Google-account, of vermeld je anonieme account-id.</li>
   <li>In de EER, het VK of Californië heb je extra rechten op inzage en rectificatie; zelfde adres.</li>
 </ul>
 
@@ -84,7 +86,7 @@
 <p>Alleen HTTPS-transport. Lokale exports worden versleuteld met een door jou gekozen wachtwoordzin. We versturen geen onafgedekte afbeeldingen namens jou: het afdekken gebeurt op het toestel en wordt vóór upload in de afbeelding gebrand.</p>
 
 <h2>10. Geen medisch advies</h2>
-<p>ReportWise is geen medisch hulpmiddel. AI-uitvoer is educatief, kan fouten bevatten en vervangt geen advies van een zorgverlener.</p>
+<p>ReportWise is geen medisch hulpmiddel. AI-uitvoer is educatief, kan fouten bevatten en vervangt geen advies van een zorgverlener. De app toont bron- of citatiesecties bij AI-uitleg wanneer beschikbaar, zodat je de basis van de informatie kunt controleren.</p>
 
 <h2>11. Wijzigingen</h2>
 <p>Bij wijzigingen werken we de datum hierboven bij en tonen we bij ingrijpende wijzigingen een melding in de app bij de volgende start.</p>
